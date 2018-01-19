@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+.challenge-banner{width:100%;	float:left;	position: relative;}
+.challenge-search-bar{float: none;margin: 0 auto;position: relative;top: 0;width: 80%;}
+.challenge-search-bar form {float: left;position: absolute;top: -140px;width: 100%;}
+.challenge-search-bar-icon {background: hsla(0, 0%, 0%, 0) none repeat scroll 0 0;border: 0 none;padding: 28px 17px 0;position: absolute;
+right: 0;}
+.challenge-search-bar-icon i{font-size:30px;color:#fff;}
+.challenge-search-bar form input{	background: rgba(255,255,255,0.2);border: medium none;width:100%;float: left;padding: 8px 23px;
+position:absolute;z-index:50;border:1px solid #e3e3e3;border-radius: 45px;height: 87px;font-size: 44px;color:#fff;}
+.challenge-search-bar form input::placeholder{font-size:50px;font-weight:normal;color:#fff;}
+.search-body{float: left;width:100%;}
+.challenge-list{float: left;width:100%;}
+.challenge-list-filer{float: left;margin: 30px 0 0;width: 100%;}
+.challenge-list-filer-tab{display: inline-flex;}
+.challenge-list-filer-dropdown{display: inline-flex;float:right;}
+.challenge-list-filer-button button{float:left;border:1px solid #cdcccc;background:#fff;color:#1a1a1a;padding:6px 0px;border-radius:5px;
+font-size:15px;width:100px; margin-right: 6px;transition: all 0.1s linear 0s;}
+.challenge-list-filer-button button:hover{background:#000;color:#fff;}
+.challenge-list-box{float: left;width:96%; padding: 15px;transition: all 0.1s linear 0s;margin: 10px 0;}
+.challenge-list-box:hover{float:left;background:#fff;box-shadow:0 0 13px rgba(0,0,0,0.2)}
+.challenge-list-image{float: left;width:217px; height:162px;background:#000;position:relative;z-index: 2;}
+.challenge-list-image:before {z-index: -1;  position: absolute;  content: "";  display: block;  width: 102%;  height: 102%;  
+top:0px;  left: 0;background:#d4d4d4;-webkit-transform: rotate(10deg);-moz-transform: rotate(10deg);-o-transform: rotate(10deg);
+-ms-transform: rotate(10deg);transform: rotate(3deg);}
+.challenge-list-image-hover{width:100%;height:100%;float:left;text-align:center;position:absolute;background:rgba(0,0,0,0.6);color:#fff;
+transition: all 0.1s linear 0s;opacity:0; }
+.challenge-list-image-hover p{margin-top: 32%;}
+
+.challenge-list-image:hover .challenge-list-image-hover{opacity:1;}
+.challenge-list-container{width:100%;float:left; margin-top: 28px;}
+.challenge-list-image img{width:100%;float: left;height:100%;object-fit:cover;}
+.challenge-list-text-box{float: left;padding:5px 0 0 20px;width:70%;}
+.challenge-list-text-box h2{font-size:13px;color: #f17f10; margin:0px;font-weight:normal;}
+.challenge-list-text-box h3{font-size:18px;color:#000; margin-bottom:7px;margin-top:5px;font-weight:normal;}
+.challenge-list-text-box p{font-size:14px;color:#515151;font-weight:normal;margin:0; margin-bottom: 7px;}
+.challenge-list-text-icons-box{width:100%;float: left;margin-top:15px;}
+.challenge-list-text-icons{display:inline-flex;max-width: 100px;padding: 5px 8px;border: 1px solid rgba(0,0,0,0);}
+.challenge-list-text-icons:hover .challenge-icons-text {display:none;opacity:0;}
+.challenge-list-text-icons:hover{border: 1px solid #bcbcbc;border-radius: 20px;display: inline-flex; padding: 5px 8px;}
+.challenge-list-text-icons:hover .challenge-icons-text-full {display: inline-flex;opacity:1}
+.challenge-icons-text-full{ display:none;opacity:0;transition: all linear 200ms;}
+.challenge-list-image-hover-vote{bottom: 0;float: left;padding: 7px 15px;position: absolute;width: 86%;}
+.challenge-list-hover-vote{display: inline-flex;float: left;}
+.challenge-list-hover-vote i{display: inline-flex;margin-right:7px}
+.challenge-list-hover-vote-text{}
+.challenge-list-hover-comment{float: right;width: auto;display: inline-flex;}
+.challenge-list-hover-comment i{display: inline-flex;margin-right:7px}
+.challenge-list-text-icons i{font-size:17px;;color:#656565;margin-right:6px;}
+.challenge-icons-text{}
+.challenge-divider{width:100%;float:left;height:1px;background:#c6c6c6;}
+
+/* drop down */
+.formHolder{float:left; margin-left: 16px;}
+.formHolder p{display: inline-block;float: left;font-size: 15px;margin: 7px 9px 0 0;}
+.scrollableList {font-size: 15px;position:relative;color:#666;width: 115px;float: left;background: #FFF;display:none;padding: 2px 6px 6px;border-radius: 5px;border: 1px solid #B3B3B3;}
+.scrollableList ul {background: #fff none repeat scroll 0 0;border: 6px none;border-radius: 11px;
+box-shadow: 0 1px 11px hsla(0, 0%, 0%, 0.2);margin: 10px -7px 0;padding: 15px 0;position: absolute;top: 30px;width: 166px;}
+.scrollableList ul li {cursor: pointer;font-size: 15px;line-height: 26px;list-style: outside none none;padding: 0 23px;}
+.selectedOption { background: url('../img/drop-arrow.png') no-repeat right;cursor: pointer;float: left;height: 18px;padding: 5px 0 0 5px;width: 96%;}
+.scrollableList ul li:hover {color:#c33;}
+.selectedOption:hover {color:#333;}
+.selectedOption{font-weight:normal;}
+.profile-search-text-box{ background-color: white;border-radius: 3px;color: #333333;font-size: 14px;height: 128px;padding: 15px 16px;position: relative;border-top-right-radius: 0px;border-top-left-radius: 0px;}
+.profile-search-user-box{position:relative;top: 30px;}
+.profile-search-user-name {position:relative;}
+.profile-search-user-name a{color: #333333;font-size: 16px;font-weight: 600;margin: 0;text-decoration: none;}
+.profile-search-user-nikname {position:relative;margin-top: 3px;}
+.profile-search-user-nikname a{color: #9a9a9a;font-size: 13px;font-weight:normal;margin: 0;text-decoration: none;}
+.profile-search-text-follow {float: right;position: absolute;right: 0;top: -35px;}
+.profile-search-text-follow a{border: 1px solid #c9c9c9;border-radius: 3px;color: #6f6f6f;display: inline-block;font-size: 12px;min-width: 50px;padding: 5px 3px;text-align: center;font-weight:normal;}
+.stats {bottom: 18px;left: 18px;position: absolute; border-top: 1px solid #f0f0f0; padding: 6px 0 0;width: 86%;}
+.followers {float: left;padding: 0 13px;border-right: 1px solid #f0f0f0;}
+.followers:last-child {border-right:0;}
+.followers:first-child {padding: 0 13px 0 0;}
+.num {font-size: 16px;font-weight: 600;}
+.ng-binding {color: #999999;font-size: 12px;}
+
+
+
+
+
+.designer-grid .designer .bio .skills span {display: block;font-size: 12px;margin-left: 16px;float: left;width: 100%;}
+.profile-search-user-image{border-radius: 50px;float: left;height:60px;left:15px;overflow: hidden;position: absolute;top: -23px;width:60px}
+.profile-search-user-image img{float: left;width: 100%;}
+.profile-search-box{ float: left; margin: 0 12px 24px;position: relative;width:22.9%;box-shadow: 0 0px 5px rgba(31, 31, 31, 0.1);border-radius: 3px;}
+.profile-search-image-box{float:none;overflow: hidden;width:100%;position:relative;height:150px; border-top-left-radius: 3px; border-top-right-radius: 3px;}
+.profile-search-image-box a{background: #000;float: left;height:100%;width: 100%;}
+.profile-search-image-box a img{float:left;width:100%;height:100%;object-fit:cover;transition:all linear 200ms;}
+
+.search-tab-box{float: left;width: 100%;border-bottom:1px solid #c6c6c6;}
+.search-tab-box-content{margin:0 auto;margin-left: 22%;}
+.search-tab-box-content button{    
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: transparent none repeat scroll 0 0;
+    border-color: -moz-use-text-color -moz-use-text-color #c6c6c6;
+    border-image: none;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    color: #727272;
+    float: left;
+    font-size: 17px;
+    padding: 13px 0;
+    width: 22%;}
+	
+	
+.search-tab-active{    
+    background: transparent none repeat scroll 0 0;
+    border-color:#000 !important;
+    color: #000 !important;
+}
+
+
+.search-tab-box-content button:hover{    
+    background: transparent none repeat scroll 0 0;
+    border-color:#000 !important;
+    color: #000 !important;
+}
+
+.profile-search-post-container{width:100%;float:left; margin-top: 28px;padding:0 10px;column-width:500px;column-gap:71px;
+-moz-column-width:500px;-moz-column-gap:71px;-webkit-column-width:500px;-webkit-column-gap:71px;}
+.search-post-container{
+    margin: 40px 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 3px 2px 5px rgba(0,0,0,0.2);
+    display: inline-block;
+    position: relative;
+    float: none;
+
+}
+
+
+

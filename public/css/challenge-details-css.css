@@ -1,0 +1,148 @@
+
+[contenteditable=true]:empty::before {
+    color: #ababab;
+    content: attr(placeholder);
+    display: block;
+    font-family: "robotolight";
+    font-size: 25px;
+    font-weight: normal;
+}
+[contenteditable=true]:empty::before {
+    content: attr(placeholder);
+    display: block;
+}
+
+div .post-comment-section-edit {
+    background: hsl(0, 0%, 100%) none repeat scroll 0 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: hsl(0, 0%, 10%);
+    cursor: text;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    min-height: 60px;
+    outline: medium none;
+    padding: 11px 7px;
+}
+
+.challenge-details-body{float: left;width: 100%;}
+
+.newspaper {    
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;  
+}
+.challenge-post-container{float:none !important;margin-top:0; margin-bottom: 20px;}
+
+.challenge-container-header {
+    display: inline-block;
+    width: 100%;
+	margin-bottom: 10px;
+}
+.challenger-profile-image {
+ 	border-radius: 50%;
+    display: inline-block;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+	float:left;
+	margin-right: 10px;
+}
+
+.challenger-profile-image img {
+    float: left;
+    width: 100%;
+}
+
+.challenger-follow-button {
+    display: inline-block;
+	float: right;
+}
+
+.challenger-follow-button a {
+    border: 1px solid #c9c9c9;
+    border-radius: 3px;
+    color: #6f6f6f;
+    display: inline-block;
+    font-family: "robotoregular";
+    font-size: 12px;
+    min-width: 50px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.challenger-initiator{  
+	color: #f17f10;
+    display: inline-block;
+    font-size: 13px;
+	font-weight:bold;
+	margin-right: 10px;
+}
+
+.challenger-participant{  
+	color: #096cc9;
+    display: inline-block;
+    font-size: 13px;
+	font-weight:bold;
+	margin-right: 10px;
+}
+
+.challenger-name{  
+	color: #303030;
+    display: inline-block;
+    font-size: 13px;
+	font-weight:bold;
+	margin-top: 9px;
+}
+.Challenge-container-image{float: left;position: relative;width: 100%;}
+.Challenge-container-image img{float: left;width: 100%;}
+
+.challenge-container-text {border-bottom: 1px solid #eaeaea;display: inline-block;width: 100%;margin-top: 10px;}
+.challenge-container-text h2 {color:#1c1c1c;font-family: "robotoregular";font-size: 19px;line-height: 22px;margin:5px 0;}
+.challenge-container-text p {color: #373737;font-family: "robotoregular";font-size: 13px;line-height: 18px;}
+.challenge-category-list{width:100%;float:left}
+.challenge-category-list p{float:left;color: #707070;font-size: 13px;line-height: 18px; margin: 0 19px 20px 0;}
+
+.challenge-view-commnet{float:right;width:auto;color:#d87572;font-size:12px;margin-right: 20px;cursor:pointer;}
+.challenge-comment-hide-show-box{display:none;}
+.challenge-like-button-box {border-bottom: 1px solid hsl(0, 0%, 92%);float: left;padding: 12px 0;width: 100%;
+border-bottom-right-radius:3px;border-bottom-left-radius:3px;
+}
+
+.post-comments-box h4{ color: #1c1c1c;
+    font-family: "robotoregular";
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 22px;
+    margin: 5px 0;
+    padding: 5px 13px;
+	border-bottom: 1px solid hsl(0, 0%, 92%);
+	}
+
+.challenge-banner{ float: left;position: relative;top: 112px;width: 100%;}
+.challenge-details-banner{float: left;height: 97px;width: 100%;}
+.challenge-details-banner img{float: left;height: 100%;object-fit: cover;width: 100%;}
+
+.challenge-details-banner-text{width:100%;float:left;position:absolute; height: 100%;}
+.challenges-heading-text h2{color: #fff;display: inline;float: left;font-size: 40px;font-weight: normal;margin-bottom: 0;
+text-transform: uppercase;}
+
+.challenges-heading-text{width:100%;position:relative;float:left;}
+.challenges-rules-button{   bottom: -16px;    position: absolute;    right: 0;    width: auto;}
+.challenges-rules-button a{ background: #000 none repeat scroll 0 0;
+    color: #fff;
+    float: left;
+    margin-left: 18px;
+    padding: 14px 0;
+    text-align: center;
+    width: 120px;
+	border-radius:5px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+
+
+
+

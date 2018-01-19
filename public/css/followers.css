@@ -1,0 +1,293 @@
+.profile-box{width:100%;background:#fff;margin-top: 112px;float:left;}
+.profile-main-count{border-bottom: 1px solid #e0e0e0;float: left;width: 100%;padding: 25px 0;}
+.profile-image-and-name-box{float:left;}
+.profile-image{float:left;width:110px;height:110px;border-radius:50%;overflow:hidden;
+box-shadow:0 5px 5px rgba(0,0,0,0.3);border:2px solid #fff;margin-right: 25px;}
+.profile-image img{width:100%;float:left;object-fit:cover}
+.profile-name{float:left;margin-top: 12px;}
+.profile-name h4{font-size:32px;color:#000;margin: 5px 0 8px;font-family: "robotolight";}
+.profile-premium-btn{float:left;padding: 5px 10px;font-size:15px;color:#404040;border-radius:3px;border:1px solid #a0a0a0}
+.profile-name p{float:left;font-size:12px;color:#959595;margin: 8px 0 0 15px;}
+.profile-count-all-box{float:right;margin-top: 26px;}
+.profile-count-about{float: left;width: auto;border-right: 1px solid #acaaaa;}
+.profile-count-about a{color:#404040;float:left;text-align:center;width:115px;font-size: 15px;}
+.profile-count-about a i{float:left; width:100%;font-size: 26px;}
+.profile-count-about a span{ float: left;width: 100%;font-size:25px;color:#000;}
+.profile-count-settings{ float: left;width: auto;}
+.profile-count-settings a{ float: left;text-align:center;width:85px;color:#777777;}
+.profile-count-settings a i{font-size:46px;}
+
+.about-nav-box{float:left; width: 100%;}
+.about-nav-box ul{float: left;padding: 0;text-align: center;width: 100%;}
+.about-nav-box ul li{float:none;list-style:outside none none;
+display: inline-block; margin: 0;}
+.about-nav-box ul li a{float:none;color:#797979;list-style:outside none none;
+display: inline-block; margin: 0 7px;font-size:18px; }
+.about-nav-box ul li .active{color:#000;}
+.about-nav-box ul li i{float:left;color:#d2d2d2;font-size:6px; }
+
+
+.about-section-box{float: left;width: 100%; margin-top: 40px;}
+.about-left-section{float: left;width: 320px;}
+.about-left-nav{float: left;width: 100%;}
+.about-left-nav ul{float:left;list-style: outside none none;padding: 0;}
+.about-left-nav ul li{}
+.about-left-nav ul li a{color: #c9c9c9;font-size: 50px;font-weight: bold;
+font-family: "robotoblack";}
+.about-left-nav-active{color:#868686 !important; font-size: 60px !important;}
+
+
+.about-right-section {border-left:1px solid #c8c8c8;display: inline-block;float: right;width: calc(100% - 333px);}
+		.about-edit-btn{float: right;padding: 0 0 0px;width: 100%;}
+		.about-edit-btn a{float: right;width: auto; color: #777777;padding: 12px 13px 0;border: 1px solid transparent;}
+		.about-edit-btn a:hover{ background: #fff none repeat scroll 0 0;border: 1px solid #bcbcbc;border-radius: 20px;display: inline-flex;
+		padding: 12px 13px 0;float: right;box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);}
+.about-edit-btn a i{float: right;font-size: 27px;margin-left: 5px;margin-top: -5px;width: auto;}
+.about-right-following-box{ float:left;width:100%;}
+.about-right-following-box-left{float:left;width:100%;min-height: 360px;padding: 0 0 100px;}
+.about-right-following-list-image{border-radius: 5px;float: left;height: 103px;overflow: hidden;width: 103px;}
+.about-right-following-list-image img{width:100%;height:100%;float:left;object-fit:cover;}
+.about-right-following-list{border-bottom: 1px solid #cfcfcf;float: left;margin: 0 0 0 20px;padding: 10px 0;width: 47%;}
+.about-right-following-list-text{float: left;width: calc(100% - 130px); padding: 0 0 0 20px;}
+.about-right-following-list-text h2{font-s						ize:18px;color:#202020;float:left;font-family: "robotoblack";margin-bottom: 5px;width:100%;}
+.about-right-following-list-text p{font-size:16px;color:#a1a1a1;float:left;font-family: "robotoblack"; margin:0;}
+
+
+.about-right-following-list-text a{background: #fff none repeat scroll 0 0;border: 1px solid #cdcccc;border-radius: 5px;color: #1a1a1a;float: left;font-size: 15px;margin-right: 6px;padding: 6px 0;transition: all 0.1s linear 0s;width: 100px;text-align:center;margin-top: 6px;}
+
+.about-right-following-list-text a:hover{background: #000 none repeat scroll 0 0;color: #fff;}
+.about-right-following-list-text .follow-cancel a{border: 1px solid #aaa;border-radius: 5px;color: #898989;float: left;font-family: "robotoregular";font-size: 11px;margin-right:5px;padding: 6px 0;position: relative;text-align: center;text-transform: uppercase;
+background:none;transition: all 0.1s linear 0s;width: 100px;}
+
+.follow-mod-image{border-radius: 10px;display: block;height: 100px;margin: 0 auto;overflow: hidden;width: 100px;}
+.follow-mod-image img{display: inline;height: 100%;object-fit:cover;width:100%;}
+.follow-mod-button-box{display: inline-block;width: 100%; border-top: 1px solid #c6c6c6;
+position: absolute;bottom:0}
+.follow-mod-button-box button{-moz-border-bottom-colors: none;-moz-border-left-colors: none;-moz-border-right-colors: none;-moz-border-top-colors: none;background: rgba(0, 0, 0, 0) none repeat scroll 0 0;border-color: #c6c6c6;border-image: none;border-style: none solid none none;border-width: 0 1px 0 0;font-size: 16px;padding: 10px 0px;cursor: pointer;width:49%;}
+
+.follow-mod-button-box button:last-child{border:none}
+
+.about-right-friend-list-text{float: left;width: calc(100% - 130px); padding: 0 0 0 20px;}
+.about-right-friend-list-text h2{font-size:18px;color:#202020;float:left;font-family: "robotoblack";margin-bottom: 3px;width:100%; margin-top: 0;}
+.about-right-friend-list-text p{margin:0;width:100%;float:left;}
+.about-right-friend-list-text p a{background: rgba(0, 0, 0, 0) none repeat scroll 0 0;border: 0 none;color: #444444;float: left;    font-family: "robotoregular";font-size: 13px;margin: 0;padding: 0;text-align: left;width: 100%;}
+.about-right-friend-list-text p a:hover{background: none;color: #444444;}
+.about-right-friend-list-text a{background: #fff none repeat scroll 0 0;border: 1px solid #cdcccc;border-radius: 5px;color: #1a1a1a;float: left;font-size: 13px;margin-right: 6px;padding: 6px 0;transition: all 0.1s linear 0s;width: 100px;text-align:center;margin-top:3px;}
+.about-right-friend-list-text a:hover{background: #000 none repeat scroll 0 0;color: #fff;}
+.profile-mutual-list-box{float: left;width: 100%;}
+.profile-mutual-list-box ul{float: left;list-style: outside none none;padding:0; margin: 4px 0;}
+.profile-mutual-list-box ul li{float: left;margin-right: 5px;}
+.profile-mutual-list-box ul li a{ border: 1px solid #fff;border-radius: 50%;float: left;height: 22px;margin: 0;overflow: hidden;padding: 0;
+width: 22px;}
+.profile-mutual-list-box ul li a img{float: left;width:100%;height:100%;object-fit:cover}
+.profile-mutual-list-box ul li i{background: #fff none repeat scroll 0 0;border-radius: 50%;color: #000;cursor: pointer;float:left;font-size: 11px;font-weight: bold;height: 16px;margin-right: 5px;margin-top: 6px;padding: 4px 0 0;text-align: center;width: 20px;}
+.privacy-list-box{float:left;width:100%; padding: 0 0 0 20px;}
+.privacy-list-box h2{border-bottom: 1px solid #c6c6c6;color: #202020;float: left;font-size: 22px;margin-bottom: 15px;padding: 0 0 10px;
+width: 100%;}
+.privacy-list-friend{float: left;margin-bottom: 20px;width:100%;}
+.privacy-list-friend h3{ background: #afafaf none repeat scroll 0 0;color: #fff;float: left;font-size: 18px;margin: 0 0 0;
+padding: 10px 15px;width: 96.3%;}
+.privacy-list-friend-option{float: left;margin: 10px 0 0;}
+.privacy-list-friend-option h4{color: #070707;float: left;font-size: 15px;font-weight: normal;margin: 0;min-width: 89px;}
+.privacy-list-friend-option .form-group{float: left;width: auto;margin-right: 23px;}
+.privacy-friendlist{background: #e1e1e1 none repeat scroll 0 0;float: left;margin:6px 0;padding: 10px;width: 97.5%;}
+.privacy-friendlist p{float: left;width: 98%;margin:0;font-size:13px;font-weight: bold;}
+.privacy-save-button{float: right;margin: 0;width: auto;}
+.privacy-save-button button{background: #fff none repeat scroll 0 0;border: 1px solid #cdcccc;border-radius: 5px;color: #1a1a1a;
+float: left;font-size: 15px;margin-right: 6px;margin-top: 6px;padding: 6px 0;text-align: center;transition: all 0.1s linear 0s; 
+width: 100px;cursor:pointer;}
+.privacy-save-button button:hover{background: #000;color:#fff}
+.about-right-mutual-list{border-bottom:1px solid #c6c6c6;float: left;padding: 5px 0;width: 100%;}
+.about-right-mutual-list:last-child{border-bottom:0;}
+.about-right-mutual-list-image{border-radius: 5px;float: left;height: 50px;overflow: hidden;
+width: 50px;}
+.about-right-mutual-list-image img{width:100%;float:left;height:100%;object-fit:cover;}
+.about-right-mutual-list-text {float: left;padding: 0 0 0 20px;width: calc(100% - 200px);}
+.about-right-mutual-list-text h2 {color: #202020;float: left;font-family: "robotoblack";font-size:15px;margin-bottom: 5px;width: 100%;}
+.about-right-mutual-list-text p {float: left;margin: 0;width: 100%;}
+
+.about-right-mutual-list-text p a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    color: #444444;
+    float: left;
+    font-family: "robotoregular";
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+
+.about-mutual-popt-button a {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #cdcccc;
+    border-radius: 5px;
+    color: #1a1a1a;
+    float: right;
+    font-size: 12px;
+    margin-right: 6px;
+    margin-top: 6px;
+    padding: 6px 0;
+    text-align: center;
+    transition: all 0.1s linear 0s;
+    width: 83px;
+}
+.about-mutual-popt-button a:hover{background: #000 none repeat scroll 0 0;color: #fff;}
+.about-mutual-popt-button .active{background: #000 none repeat scroll 0 0;color: #fff;}
+.about-mutual-popt-button{}
+.about-box{float:left;width:96%;  padding: 0 0 35px 20px;}
+.about-box h2{float:left;width:100%; padding: 0px;  margin: 0 0 15px;color:#000;font-size:18px;}
+.about-box p{float:left;width:auto; padding: 0px; margin: 15px 15px 0 0; color:#444444;font-size:16px;}
+.about-box p i{float:left;width:auto;margin:0 10px 0 0;}
+
+.skill-box{float:left;width:100%;  padding: 0 0 35px 20px;}
+.skill-box h2{float:left;width:100%; padding: 0px; margin:0 0 15px;color:#000;font-size:18px;}
+.skill-box p{float:left;padding: 0px; margin:15px 15px 0 0;color:#444444;font-size:16px; min-width:100px; padding:6px 5px; 
+border:1px solid #c6c6c6;border-radius:5px;text-align:center;}
+
+
+.about-box-input{width:48%;float:left;}
+.about-box-input label{float: left;font-size: 13px;font-weight: bold;margin: 0;width: 98%;}
+.about-box-input input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;font-size: 16px;height: 24px;line-height: 1.8;padding: 6px 12px;width: 90%;}
+.about-box-testare{width:100%;float:left;}
+.about-box-testare label{float: left;font-size: 16px;font-weight: normal;   margin:10px 0;width: 98%;color: #4d4d4d;}
+.about-box-testare input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;font-size: 16px;height:24px;line-height: 1.8;padding: 6px 12px;width: 91.1%;}
+
+
+.about-box-testare textarea{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float: left;
+font-size: 16px;min-height: 84px;line-height: 1.8;padding: 6px 12px;width: 91%; resize:none;}
+
+.about-box-input-full{}
+.about-box-input-full label{float: left;font-size: 13px;font-weight: bold;margin: 0;width: 98%;}
+.about-box-input-full input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;font-size: 16px;height: 24px;line-height: 1.8;padding: 6px 12px;width: 90%;}
+.about-box-half{width:48%;float:left;}
+.current-add{width: 23.6%;float:left;}
+.current-add label{float: left;font-size: 16px;font-weight: normal;margin:10px 0;width: 98%;color: #4d4d4d;}
+
+.current-add select{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;
+font-size: 16px;height:41px;line-height: 1.8;padding: 6px 12px;width: 96%;}
+
+.current-add input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;font-size: 16px;height:24px;line-height: 1.8;padding: 6px 12px;width: 86%;}
+
+.skill-box {}
+.skill-box select{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;
+font-size: 16px;height:42px;line-height: 1.8;padding: 6px 12px;width: 83%;}
+.skill-box button{ background-color: #fff;border: 1px solid #ccc;border-radius: 5px;color: #555;display: inline-block;
+    float: left;font-size: 16px;line-height: 1.8;margin-left: 6px;margin-top: 6px;padding: 0 5px;width: auto;}
+.skill-box button i{float:left;color: #000;font-size: 13px;}
+
+.about-box-input-social{width:100%;float:left;}
+.about-box-input-social label{float: left;font-size: 13px;font-weight: bold;margin: 3px 0 0;width:5%;}
+.about-box-input-social label i{float: left;font-size:35px;font-weight: bold;margin: 0;color: #4f4f4f;}
+.about-box-input-social input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;
+float:left;font-size: 16px;height: 24px;line-height: 1.8;padding: 6px 12px;width: 86%;}
+
+.privacy-about-edit{ float: left;margin:0;padding:0px;width: 97.5%;}
+.privacy-about-edit p {color: #444444;float: left;font-size: 13px;margin: 10px 15px 0 0;padding: 0;width: auto;}	
+.privacy-about-edit-option{float: left; margin: 6px 0px 0 0;}
+.privacy-about-edit-option select{background-color: #f6f6f6;border: 1px solid #d2d2d2;
+border-radius: 5px;color: #555;display: inline-block;float: left;font-size: 12px;
+height: 24px;line-height: 1.8;padding: 0 3px;width: 96%;}
+.about-edit-btn-submit{ border-top: 1px solid #c6c6c6;float: left;width: 90%;padding: 12px 0 0 20px;}
+.about-edit-btn-submit button {background: #fff none repeat scroll 0 0;border: 1px solid #cdcccc;border-radius: 5px;
+color: #1a1a1a;cursor: pointer;float: left;font-size: 19px;margin-right: 6px;margin-top: 6px;padding: 10px 0;text-align: center;
+transition: all 0.1s linear 0s;width: 130px;}
+.about-edit-btn-submit .save{background: #000 none repeat scroll 0 0;color: #fff;}
+.about-box-input-full{}
+.about-moblie-input-full label{float: left;font-size: 13px;font-weight: bold;margin: 0;width:80%;}
+.about-moblie-input-full input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float:left;font-size: 16px;height: 24px;line-height: 1.8;padding: 6px 12px;width:79%;}
+
+.about-moblie-input-full button{ background-color: #fff;border: 1px solid #ccc;border-radius: 5px;color: #555;display: inline-block;
+float: left;font-size: 16px;line-height: 1.8;margin-left: 6px;margin-top: 6px;padding: 0 5px;width: auto;}
+.about-moblie-input-full button i{float:left;color: #000;font-size: 13px;}
+.add-div{float:left;width:100%;}
+.add-div input{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;float: left;    font-size: 16px;height: 40px;line-height: 1.8;margin: 10px 0;padding: 6px 12px;width: 79%;}
+
+.add-div select{background-color: #fff;border: 2px solid #ccc;border-radius: 5px;color: #555;display: inline-block;
+float: left;font-size: 16px;height: 40px;line-height: 1.8;margin: 10px 0;padding: 6px 12px;width: 79%;}
+
+.removebu{background-color: #000;border-radius: 50%;color: #fff;display: inline-block;float: left;font-size: 16px;height: 25px;
+ line-height: 0.9em;margin-left: 8px;margin-top: 17px;text-align: center;width: 25px;}
+.removebu i{display: inline-block;font-size: 10px;margin-top: 6px;}
+
+/* check box modification*//* check box modification*//* check box modification*/
+/* check box modification*//* check box modification*//* check box modification*/
+
+
+input[type="radio"]{
+  display:none;
+}
+input[type="radio"] + label{
+   	color: #4f4f4f;cursor: pointer;font-size: 14px;
+}
+input[type="radio"] + label:before{
+	background:#fff;height: 21px;border:1px solid #c6c6c6;content: " ";
+	display: inline-block;width: 21px;vertical-align: middle;margin-right: 10px;
+  	position:relative;top:-1px;border: 1px solid #c6c6c6;border-radius:50%;
+}
+input[type="radio"]:checked + label:before{
+	content: "\2713";color: #000;font-size: 14px;text-align: center;line-height: 21px;
+}
+
+
+/* check box modification*//* check box modification*//* check box modification*/
+/* check box modification*//* check box modification*//* check box modification*/
+
+.profile-main-banner-box{width: 100%;float:left;margin:20px 0 0 0;position: relative;}
+.profile-main-banner{float:left;border-radius: 5px;width: 100%;overflow:hidden;box-shadow:0 5px 05px rgba(0,0,0,0.5); height: 500px;}
+.profile-main-banner img{width:100%;height:100%;object-fit:cover}
+.profile-intaract-button-box{width:100%;float:left;position:absolute; bottom:25px;}
+.intaract-button-box{float: right;width: auto;}
+.intaract-button{float: left;}
+.intaract-button button{background: #fff none repeat scroll 0 0;border: 1px solid #fff;border-radius: 4px;font-size: 15px;min-width: 140px;padding: 10px 15px;cursor: pointer;transition:all linear 200ms;}
+.intaract-button button:hover{box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9)}
+
+.follow-button{float: left;margin: 0 25px 0 15px;position:relative;}
+.follow-button button{background: #fff none repeat scroll 0 0;border: 1px solid #fff;    border-radius: 4px;font-size: 15px;min-width: 170px;padding: 10px 0;float: left;cursor: pointer;
+transition:all linear 200ms;}
+.follow-button button:hover{box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);}
+.intaract-button button i, .follow-button button i{}
+.follow-button-drop-down{ background: #000 none repeat scroll 0 0;border-radius: 4px;color: #fff;cursor: pointer;float: left;font-size: 15px;min-width: 170px;padding: 10px 0;text-align: center;transition: all 200ms linear 0s;width: 100%;}
+.arrow-down {border-left: 10px solid transparent;border-right: 10px solid transparent;
+border-top: 8px solid #000;bottom: -7px;height: 0;margin: 0 auto;
+position: absolute;right: 79px;width: 0;}
+.follow-button-drop-down-box{bottom:52px;position: absolute;display:none;}
+.profile-section-box{float:left;margin-top: 40px;width: 100%; margin-bottom: 50px;}
+.profile-challenge-box{ float: left;margin: 0 15px 15px 0;position: relative;width: 23.6%;}
+.profile-challenge-hover{float: left;position: absolute;opacity:0;transition:all linear 200ms;}
+.profile-challenge-hover h3{color: #fff;float: left;font-size: 16px;margin: 15px 0 0 10px;}
+.profile-challenge-hover-count{bottom: 0;position: absolute;opacity:0;transition:all linear 200ms;margin: 15px 0 6px 10px;}
+.profile-challenge-hover-count a{color:#fff;font-size:18px; }
+
+.profile-challenge-image-box{float:left;overflow: hidden;width:100%;position:relative;
+height: 196px;}
+.profile-challenge-image-box a{background: #000;float: left;height:100%;width: 100%;}
+.profile-challenge-image-box a img{float:left;width:100%;height:100%;object-fit:cover;transition:all linear 200ms;}
+
+.profile-challenge-box:hover .profile-challenge-hover{opacity:1}
+.profile-challenge-box:hover .profile-challenge-hover-count{opacity:1}
+.profile-challenge-box:hover .profile-challenge-vote-btn{opacity:1}
+.profile-challenge-box:hover .profile-challenge-image-box img{opacity:0.6}
+
+.profile-awards-box{ float: left;margin: 0 15px 15px 0;position: relative;width: 23.6%;}
+.profile-awards-count{bottom: 0;position: absolute;opacity:1;transition:all linear 200ms;margin: 15px 0 6px 10px;}
+.profile-awards-count a{color:#fff; font-size: 39px;}
+.profile-awards-count a i{}
+.profile-awards-head{float: left;position: absolute;opacity:1;transition:all linear 200ms;}
+.profile-awards-head h3{color: #fff;float: left;font-size: 16px;margin: 15px 0 0 10px;}
+
+.profile-challenge-vote-btn{ left: 50%;opacity: 0;position: absolute;transform: translate(-48%, 224%);transition: all 200ms linear 0s;}
+.profile-challenge-vote-btn a{color: #fff;float: left;font-size: 18px;border-radius:3px;border:1px solid #fff;padding:5px 0px;
+text-align: center;width: 78px;}
+
+.profile-list-search{float:right;padding: 0;position: relative;margin: 0 0 30px;}
+.profile-list-search form{float: left;padding: 0;position: relative;}
+.profile-list-search form input{background: #fff none repeat scroll 0 0;border: medium none;border-radius: 38px;font-size:15px;
+box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);float: left;height: 39px;padding: 0 0 0 13px;position: relative;width: 372px;}
+.profile-list-search-icon{background: hsla(0, 0%, 0%, 0) none repeat scroll 0 0;border: 0 none; padding: 10px 11px 0;
+position: absolute;right: 0;font-size: 19px;}
+
+.deactivat-list{}
+.deactivat-list p{}

@@ -1,0 +1,37 @@
+.notification-list-box {border-bottom: 1px solid #e9e9e9;cursor: auto;float: left;padding: 5px;position: relative;width: 98%;background: #f4f4f4 none repeat scroll 0 0;}
+.notification-list-box a{width:100%;float:left}
+.notification-list-text-name {
+    color: hsl(240, 6%, 43%);
+    float: left;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 15px;
+}
+
+
+
+.notification-popup-content{float: left;width: 99.9%;}
+.notification-viewall {background: #f8f8f8 none repeat scroll 0 0;float: left;padding: 5px 15px;text-align: right;width: 93.4%;}
+.notification-viewall a {color: #878787;font-size: 12px;}
+.notifi-box-list-text{float: left;padding: 0 0 0 8px;width:70%;}
+.notification-list-text-name span {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;border-radius: 0;color: #19053c;
+font-size: 12px;font-weight: normal;line-height: 12px;margin-left: 0;margin-right: 4px;padding: 0;position: unset;right: 0;top: 0;}
+.notification-list-box p {color: #a6a6a6;float: left;font-size: 12px;font-weight: normal;margin-bottom: 0;margin-top: 0;margin-right:13px;}
+.notification-list-box p span {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;border-radius: 0;float:left;line-height: 0;
+margin-right: 10px;padding: 0;position: unset;right: 0;top: 0;}
+.notification-list-box p span .commnets {
+    color: #a23ec7;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 0;
+}
+.notification-list-box p span i {color: #6c99db;font-size: 13px;line-height: 18px;margin-right: -3px;}
+.notification-popup-header {margin-bottom: 0 !important;}
+.notification-upload-image{width:60px; height:50px;border:1px solid #c6c6c6;overflow:hidden;float:left}
+.notification-upload-image img{width:100%; height:100%;object-fit:cover}
+.notification-read{background: #fff none repeat scroll 0 0;}
+
+
+.notification-edit-container {display: inline-block;float: right;position: relative;margin-right: 5px;}
+.notification-edit {cursor: pointer;display: inline-block;float: right;width: 15px;}
+.notification-edit img{width:100%}

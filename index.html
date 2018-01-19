@@ -1,0 +1,496 @@
+<html>
+<head>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<header name = "Access-Control-Allow-Origin" value = "*" />
+
+  <link href="public/css/main-server-08-03-2017.css" rel="stylesheet">
+<link href="public/css/search.css" rel="stylesheet">
+<!--<link href="css/followers.css" rel="stylesheet">-->
+<script type="text/javascript" src="public/js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<div class="header-fixed">
+  <header class="topnav" id="myTopnav">
+    <div class="container">
+      <div class="logo">Famile</div>
+      <ul>
+        <li><a href="#home">home</a></li>
+        <!--<li><a href="#news">social</a></li>
+        <li><a href="#contact">Challenge </a></li>
+        <li><a href="#contact">Organiser</a></li>-->
+        <li class="upgrade"><a href="#contact">upgrade +</a></li>
+        <!--<li class="grand"><a href="#contact">Grand Event</a></li>-->
+      </ul>
+      <div class="nav-right-con">
+        <div class="cd-search"> 
+        <a href="file:///D:/0.%202nd%20office/facebook/html/new-wall%20send%20from%20suman/ewall-edit.html/search.html"> search
+          <div class="header-search-icon"><i class="icon icon-search"></i></div>
+          </a> </div>
+        <div class="notification-box">
+          <div class="notification-icon-contaner"> 
+            <!-- icon -->
+            <div class="notification-icon" data-related="friends-request">
+              <div class="notification-icon-alert">
+                <p>10</p>
+              </div>
+              <i class="icon icon-hand-shake"></i> </div>
+            <!-- icon end--> 
+            <!-- content -->
+            <div class="notification-popup" id="friends-request" >
+              <div class="notification-border"></div>
+              <div id="notification-drop-pop">
+                <div class="notification-popup-header">
+                  <div class="notification-popup-headline curs" data-related="personal">Personal(<span>10</span>)</div>
+                  <div class="notification-popup-headline curs" data-related="professional">professional (<span>10</span>)</div>
+                  <div class="notification-popup-headline curs" data-related="follow">Follow (<span>10</span>)</div>
+                </div>
+                <div class="notification-popup-content activeLnk" id="personal">
+                  <div class="custom-scroll-bar">
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-check-circle accept" aria-hidden="true"></i></span>Accept your friend request</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#"><span>Sreedip Das</span> Send you a friend request</a> </div>
+                        <p>Bishwarup Debnath is a mutual friend.</p>
+                      </div>
+                      <div class="friendrequest-accept-button">
+                        <div class="friendreques-form-button">
+                          <button type="submit" value="Post" class="friendrequest-cancel">Deny</button>
+                          <button type="submit" value="Post" class="friendrequest-received">Accept</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-times-circle decline" aria-hidden="true"></i></span>Decline your friend request</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+                <div class="notification-popup-content noti-display" id="professional" >
+                  <div class="custom-scroll-bar">
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-check-circle accept" aria-hidden="true"></i></span>Accept your friend request</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#"><span>Sreedip Das</span> Send you a friend request</a> </div>
+                        <p>Bishwarup Debnath is a mutual friend.</p>
+                      </div>
+                      <div class="friendrequest-accept-button">
+                        <div class="friendreques-form-button">
+                          <button type="submit" value="Post" class="friendrequest-cancel">Deny</button>
+                          <button type="submit" value="Post" class="friendrequest-received">Accept</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-times-circle decline" aria-hidden="true"></i></span>Decline your friend request</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-check-circle accept" aria-hidden="true"></i></span>Accept your friend request</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-check-circle accept" aria-hidden="true"></i></span>Accept your friend request</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+                <div class="notification-popup-content noti-display" id="follow" >
+                  <div class="custom-scroll-bar">
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-check-circle accept" aria-hidden="true"></i></span>Accept your friend request</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#"><span>Sreedip Das</span> Send you a friend request</a> </div>
+                        <p>Bishwarup Debnath is a mutual friend.</p>
+                      </div>
+                      <div class="friendrequest-accept-button">
+                        <div class="friendreques-form-button">
+                          <button type="submit" value="Post" class="friendrequest-cancel">Deny</button>
+                          <button type="submit" value="Post" class="friendrequest-received">Accept</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-times-circle decline" aria-hidden="true"></i></span>Decline your friend request</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+              </div>
+            </div>
+            <!-- content end--> 
+          </div>
+          <div class="notification-icon-contaner"> 
+            <!-- icon -->
+            <div class="notification-icon" data-related="notification-request">
+              <div class="notification-icon-alert">
+                <p>10</p>
+              </div>
+              <i class="icon icon-notification-bell"></i> </div>
+            <!-- icon end--> 
+            <!-- content -->
+            <div class="notification-popup" id="notification-request" >
+              <div class="notification-border"></div>
+              <div id="notification-drop-pop">
+                <div class="notification-popup-header">
+                  <div class="notification-popup-headline">Notification</div>
+                </div>
+                <div class="notification-popup-content activeLnk">
+                  <div class="notification-list-box notification-read">
+                    <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                    <div class="notifi-box-list-text">
+                      <div class="notification-list-text-name"><a href="#"><span>Sreedip Das</span>said he was with you and 42 others.</a> </div>
+                      <p> <span> <i class="fa fa-comment commnets" aria-hidden="true"></i> </span> February 16 at 7:31pm</p>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+              </div>
+            </div>
+            <!-- content end--> 
+          </div>
+          <div class="notification-icon-contaner"> 
+            <!-- icon -->
+            <div class="notification-icon" data-related="message-request">
+              <div class="notification-icon-alert">
+                <p>10</p>
+              </div>
+              <i class="icon icon-message"></i> </div>
+            <!-- icon end --> 
+            <!-- content -->
+            <div class="notification-popup" id="message-request" >
+              <div class="notification-border"></div>
+              <div id="notification-drop-pop">
+                <div class="notification-popup-header">
+                  <div class="notification-popup-headline">Message</div>
+                </div>
+                <div class="notification-popup-content activeLnk">
+                  <div class="custom-scroll-bar">
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a>
+                          <p><span><i class="fa fa-clock-o" aria-hidden="true"></i></span>Wed</p>
+                        </div>
+                        <p> <span class="accept"> <i class="fa fa-angle-right" aria-hidden="true"></i> </span> goodnight</p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="notification-list-image"><img src="img/1742.jpg" alt=""></div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#">Sreedip Das</a> </div>
+                        <p><span><i class="fa fa-angle-right" aria-hidden="true"></i></span>bhalo achis?</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+              </div>
+            </div>
+            <!-- content end --> 
+            
+          </div>
+          <div class="notification-icon-contaner"> 
+            <!-- icon -->
+            <div class="notification-icon" data-related="challenge-request">
+              <div class="notification-icon-alert">
+                <p>10</p>
+              </div>
+              <i class="icon icon-trophy"></i> </div>
+            <!-- icon end--> 
+            
+            <!-- content -->
+            <div class="notification-popup" id="challenge-request" >
+              <div class="notification-border"></div>
+              <div id="notification-drop-pop">
+                <div class="notification-popup-header activeLnk">
+                  <div class="notification-popup-headline">Challenge</div>
+                </div>
+                <div class="notification-popup-content activeLnk">
+                  <div class="custom-scroll-bar">
+                    <div class="notification-list-box notification-read">
+                      <div class="challenge-list-image">
+                        <div class="challenge-noti-icon"> <i class="fa fa-picture-o" aria-hidden="true"></i> </div>
+                      </div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#"><span>ID:123456789</span> <span>Abhishek</span> posted a new <span>Global</span> challenge <span>22</span> others Participet</a> </div>
+                        <p> <span> <i class="fa fa-heart" aria-hidden="true"></i> </span> 120 likes </p>
+                      </div>
+                    </div>
+                    <div class="notification-list-box notification-read">
+                      <div class="challenge-list-image">
+                        <div class="challenge-noti-icon"> <i class="fa fa-picture-o" aria-hidden="true"></i> </div>
+                      </div>
+                      <div class="notification-list-text">
+                        <div class="notification-list-text-name"> <a href="#"><span>ID:123456789</span> <span>Sujan basu</span> invite for challenge</a> </div>
+                        <p> <span> <i class="fa fa-hand-o-left" aria-hidden="true"></i> </span> Friends Challenge </p>
+                      </div>
+                      <div class="friendrequest-accept-button">
+                        <div class="friendreques-form-button">
+                          <button type="submit" value="Post" class="friendrequest-cancel">Deny</button>
+                          <button type="submit" value="Post" class="friendrequest-received">Accept</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-viewall"> <a href="">View all</a> </div>
+                </div>
+              </div>
+            </div>
+            <!-- content end --> 
+          </div>
+        </div>
+        <div id="header-profile-image" class="user-image"> <img src="img/user-iamge.jpg" alt="user-image"></div>
+      </div>
+    </div>
+  </header>
+  <section class="search-box">
+    <div class="container-fluid">
+      <div class="search-icons-box">
+        <div class="search-settings"> <a href=""><i class="icon icon-settings"></i></a> </div>
+        <div class="search-personal"> <a href=""><i class="icon icon-man-user"></i></a> </div>
+        <div class="search-professional"> <a href=""><i class="icon icon-icon"></i></a> </div>
+        <div class="search-bar">
+          <form>
+            <input placeholder="Search..." type="search">
+          </form>
+        </div>
+      </div>
+      <div class="search-users-box">
+        <div class="search-users-box-group">
+          <div class="search-users-box-group-text">Group</div>
+          <ul>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+          </ul>
+        </div>
+        <div class="search-users-box-normal">
+          <ul>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="chat-icon-online"><i class="icon icon-dot"></i></div>
+                <div class="search-user-image">
+                  <div class="chat-noti-over">121</div>
+                  <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+            <li> <a href="">
+              <div class="search-user-image-box">
+                <div class="search-user-image"> <img src="img/user-iamge.jpg" alt=""> </div>
+                <p>sandip</p>
+              </div>
+              </a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div id="root"></div>
+<script type="text/javascript" src="/dist/js/bundle.min.js"></script>
+</body>
+</html>

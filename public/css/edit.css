@@ -1,0 +1,74 @@
+.edit-modal-content .from_area {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
+    box-shadow: 0 0 9px hsla(0, 0%, 0%, 0.15);
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.post-container-header-text-name .post-drop-popup {
+    background: hsl(0, 0%, 100%) none repeat scroll 0 0;
+    border: 1px solid hsl(0, 0%, 79%);
+    border-radius: 4px;
+    box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.2);
+    display: none;
+    float: left;
+    line-height: 17px;
+    padding: 7px 11px;
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+}
+
+.post-container-header-text-name .post-drop-pop {
+    display: block;
+    float: left;
+    list-style: outside none none;
+    margin: 0;
+    padding: 00;
+    width: 100%;
+}
+
+.post-container-header-text-name .post-drop-pop a {
+    color: hsl(0, 0%, 53%);
+    display: block;
+    font-size:12px;
+	font-family: "robotoregular";
+    font-weight: normal;
+    padding: 2px 0px;
+    text-align: left;
+}
+
+.post-container-header-text-name .post-drop-pop a:hover {color:#000;}
+.activeLnk{display:block;}
+.activeleft{display:block !important;}
+
+.user-right-side{background-color: #fff;bottom: 0;position: fixed;top: 0;width: 285px;z-index: 1022;right:0;box-shadow: -2px 0 3px rgba(0, 0, 0, 0.1);padding:30px 0 0 0;display:none;}
+.user-right-close{position: absolute;right: 11px;top: 11px;cursor:pointer;}
+.user-right-profile{ border-radius: 12px;height: 150px;margin: 0 auto;overflow: hidden;width:150px;}
+.user-right-profile img{width:100%;height:100%;object-fit:cover;}
+.user-right-profile-name{width:100%;text-align:center;color:#545454;text-transform:uppercase; font-size: 17px;margin: 17px 0;display:inline-block}
+.user-right-profile-upgrade-btn{ float: left;text-align: center;width: 100%;}
+.user-right-profile-upgrade-btn button{background:#48c80f;color:#fff;border:none;padding:8px 22px;font-size:16px;border-radius:4px;}
+
+.user-right-profile-upgrade-btn p{color:#adaeae;font-size:13px;margin:5px 0;}
+.user-right-profile-name a{display: block;color: #848585;font-size: 14px;margin: 7px 0;text-transform: none;}
+
+.user-right-profile-name a:hover{color:#000;}
+.profile-line{width:100%;height:1px;background:#d8d8d8;margin: 36px 0;float:left;}
+.user-right-side-nav{float: left;padding: 0 0 0 30px;width: 100%;}
+.user-right-side-nav ul{ list-style: outside none none;}
+.user-right-side-nav ul li{margin: 10px 0;width: 100%;}
+.user-right-side-nav ul li a{ color: #000;font-size: 16px;padding: 5px 0 5px 10px;text-transform: none;width: 100%;display: block;float:left;}
+.user-right-side-nav ul li a i{display: inline-block;font-size: 18px;margin-right: 9px;float:left;}
+
+
+
+
+
+
+

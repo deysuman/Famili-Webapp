@@ -1,0 +1,217 @@
+
+/* Slideshow container */
+.slideshow-container {
+  	display: table;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    border-radius: 3px 0 0 3px;
+    left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot-box{bottom: 0;position: absolute;text-align: center;width: 100%;z-index: 1;}
+.dot1 {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dot2 {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.pop-box{background: #000 none repeat scroll 0 0;
+   background: #000 none repeat scroll 0 0;
+    float: left;
+    height: 100%;
+    width: 74%;
+}
+.mySlides2{
+	display: block;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mySlides2 img{
+	left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pop-com-text{
+	float: right;
+    height: 100%;
+    max-width: 370px;
+    min-width: 250px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    width: calc(100% - 74%);
+}
+.pop-com-profile-image-name{float: left;width: auto;}
+.pop-comment-button { padding: 0 12px;float:left; border-left: 1px solid hsl(0, 0%, 92%);}
+.pop-comment-button button{float:left;border:none;background:transparent;padding:0;font-size:22px;color:#9c9c9c;line-height: 15px;}
+.pop-comment-button button i{}
+.pop-comment-count{float:left;font-size:13px;color:#7c7c7c;font-family: "robotoregular";margin: 4px 0 0 5px;}
+
+.pop-comment-section-edit {
+    background: hsl(0, 0%, 100%) none repeat scroll 0 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: hsl(0, 0%, 10%);
+    cursor: text;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    min-height: 33px;
+    outline: medium none;
+    padding: 10px 7px;
+}
+.pop-comments-box .tab{background: #f0f0f0}
+
+.pop-comments-box .tablinks {
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #a4a4a4;
+    font-family: "robotoregular";
+    font-size: 12px;
+    margin-left:10px;
+	margin-right:0px;
+    padding: 10px 0;
+}
+
+[pop-comttable="true"]:empty::before {
+    color: #ababab;
+    content: attr(placeholder);
+    display: block;
+    font-family: "robotolight";
+    font-size:18px;
+    font-weight: normal;
+}
+
+
+.pop-comment-section .gym_LL {
+    height: 26px;
+    margin-right: 18px;
+    margin-top: 9px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 26px;
+}
+
+.image-tag-box{float:left;position: absolute;text-align: center;width: auto;z-index: 50;}
+.image-tag{border: 1px solid #fff;min-height: 120px;min-width: 100px;}
+.image-tag-list{background: #fff none repeat scroll 0 0;padding: 3px;width: auto;
+margin-top: 10px;position: relative;}
+.image-tag-list input{border:1px solid #c6c6c6;}
+.friends-tag-list{display: block;width: 100%;margin-top: 7px;}
+.friends-tag-single{display: flex;width: 100%;padding: 3px 0;border-bottom: 1px solid #e5e5e5;}
+.friends-tag-single:last-child{border-bottom:0px;}
+.friends-tag-single-image{display: inline-block;height: 30px;width: 30px;}
+.friends-tag-single-image img{width:100%;height:100%;object-fit:cover;}
+.friends-tag-single p{color: #737373;display: inline-table;font-size: 12px;margin-left: 5px;
+margin-top: 9px;}
+
+.image-tag-border {background-image: url("../img/up-arrow.png");background-repeat: no-repeat;    background-size: auto auto;height: 8px;position: absolute;right: 10px;top: -7px;width: 16px;left: 46%;right:50%;}
+.pop-container-tag-friend{float: left;padding: 0 0 0 13px;width: 96%;}
+.pop-container-tag-friend button{background: #000 none repeat scroll 0 0;border: 1px solid #000;border-radius: 5px;color: #fff;font-size: 13px;font-weight: normal;line-height: 17px;
+padding: 3px 11px;font-weight:bold;}
+
+.pop-container-tag-friend button i{ color: #fff;float: left;font-size: 14px;margin-right: 7px;margin-top: 3px;}
+
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}

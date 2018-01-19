@@ -1,0 +1,28 @@
+export const URLS = {
+    SEARCHAPI: 'Search/doSearch',
+    COMMENT: '/addNewcomment',
+    MAINURL: 'https://idolrise.com/',
+    //MAINURL: 'http://localhost/familiProject/',
+    LOVE_REQUEST: 'post/newlove',
+    UPDATE_ANONMYOUS_PRIVACY: 'post/updateAnonprivacy',
+    SINGLE_POST: '/post/details/',
+    DELETE_POST: 'post/delpost',
+    CHANGE_POSTPRIVACY: 'post/changeprivacy',
+    MORE_COMMENT: 'post/getmorecomments',
+    DELETE_COMMENT: 'post/delcomment',
+    UPDATECOM: 'post/updateshwon',
+    EDITCOM: 'post/editcomment',
+    WALLFEED: 'post/feeds',
+    UPLOADIMG: '/post/postimgUpload',
+    UPLOADVIDEO: 'post/uploadvideo',
+    NEWPOST: '/post/newpost_Parser',
+    TAGUSERS: '/post/tagUsers',
+    POSTDETAILS : '/post/getPostmodeldetails',
+    NOTIFICATIONS : '/notification/getNotification',
+    PERTICIPETERS : '/post/peticipeters',
+    SAVEPOST : '/post/savepost',
+    GETCHAT : 'chat',
+    USERPROFILE : '/chat/profile',
+    GETCATEGORY : '/post/getAllpostCategory'
+    
+}
