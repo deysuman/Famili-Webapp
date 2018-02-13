@@ -8,6 +8,10 @@ import NotificationPage from "./Notification/NotificationPage"
 import Message from "./Chat/Header/Message.js"
 import "../lib/sweetalert";
 import {URLS} from "../constants/api"
+import swal from 'sweetalert';
+import Ajax from "../lib/ajax";
+
+
 
 window.jQuery = $;
 window.$ = $;
@@ -36,7 +40,30 @@ export default class Main extends Component{
 		}
 	}
 
+
+	updateNoti(){
+		let reactThis=this;
+		let data='';
+        Ajax(URLS.UPDATE_NOTIFICATION, data , reactThis, function(data){
+            
+
+        });
+	}
+
+
+	updateMsg(){
+		let reactThis=this;
+		let data='';
+        Ajax(URLS.UPDATE_MSG, data , reactThis, function(data){
+            
+        });
+	}
+
 	componentDidMount() {
+
+		let reactThis=this;
+
+		
 
         if(document.getElementById("notification_root")!=null){
 
@@ -56,6 +83,9 @@ export default class Main extends Component{
             $(".notification-icon").on("click", function() {
                 var target_id = ("#" + $(this).attr("data-related"));
                 $(target_id).toggle();
+
+                return false;
+
             });
 
             $(".post-option-btn ").on("click", function() {
@@ -77,6 +107,42 @@ export default class Main extends Component{
             });
         });
 
+        $(document).click(function()
+		{
+		$(".notification-popup").hide();
+		});
+
+        $(".notification-popup").click(function()
+		{
+			if($(this).css('display') == 'block')
+			{
+				$(this).show();
+
+			}
+
+			
+		});
+
+
+		if(document.getElementById("dft")!=null){
+
+			$("#dft").mousedown(function(){
+			    reactThis.updateNoti();
+			});
+
+		}
+
+		
+
+		if(document.getElementById("msg_bb")!=null){			
+
+			$("#msg_bb").mousedown(function(){
+				$("#message_counter").hide();
+            	$("#message_counter p").html("");
+			    reactThis.updateMsg();
+			});
+
+		}
 
 
 

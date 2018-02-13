@@ -1,7 +1,7 @@
 export const URLS = {
     SEARCHAPI: 'Search/doSearch',
     COMMENT: '/addNewcomment',
-    MAINURL: 'https://idolrise.com/',
+    MAINURL: 'https://seemypost.com/',
     //MAINURL: 'http://localhost/familiProject/',
     LOVE_REQUEST: 'post/newlove',
     UPDATE_ANONMYOUS_PRIVACY: 'post/updateAnonprivacy',
@@ -23,6 +23,11 @@ export const URLS = {
     SAVEPOST : '/post/savepost',
     GETCHAT : 'chat',
     USERPROFILE : '/chat/profile',
-    GETCATEGORY : '/post/getAllpostCategory'
+    GETCATEGORY : '/post/getAllpostCategory',
+    FOLLOW : '/fragment/commonfollowreqsent',
+    UNFOLLoW : '/fragment/commonunfollowreqsent',
+    UPDATE_NOTIFICATION : '/notification/update_noti',
+    UPDATE_MSG : '/chat/update_msg',
+    REPORT : '/post/reprt'
     
 }

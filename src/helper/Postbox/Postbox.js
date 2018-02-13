@@ -4,6 +4,7 @@ import Require from "./Require"
 import {URLS} from "../../constants/api"
 import {ajaxObj,ajaxReturn} from "../../lib/ajax"
 import plyr from 'plyr';
+import swal from 'sweetalert';
 
 
 let commentmode = Require.commentmode;
@@ -232,150 +233,300 @@ export function Uploadimg(Ge) {
 
 }
 
-export function ghh(Ge,Qe){c('upload_section')[0].style.display='block',c('upload_items')[0].style.display='block',tylb(Qe);let Ke=Ge.name,Ze=Ke.substring(Ke.lastIndexOf('.')+1).toLowerCase();if('gif'==Ze||'png'==Ze||'bmp'==Ze||'jpeg'==Ze||'jpg'==Ze){let et=Ge,tt=new FileReader;tt.onloadend=function(){let dt=no++,pt=document.createElement('div');pt.id='image_open_'+dt,pt.setAttribute('class','items items_uploadimages'),pt.innerHTML='<div class="protograpy_panel"><div class="photography_image_container"><div class="photography_image" id="photo_'+dt+'"><div class="photoimage-loader" id="img_load'+dt+'"><div id="myProgress"><div class="myBar" id="img_bar'+dt+'"></div></div></div><img src="'+tt.result+'" alt="photography"/><div class="danger_photo_remove" luci-data-type="0" luci-data-value="{'+dt+'}"><i class="icon icon-multiply"></i></div></div></div></div></div><div class="clearfix"></div>',0==c('items_uploadimages').length&&c('upload_section')[0].classList.remove('none'),c('upload_items')[0].insertBefore(pt,c('upload_items')[0].childNodes[0]),id('image_opener').value='';let ut=ajaxObj('POST',URLS.UPLOADIMG);ut.upload.addEventListener('progress',function(mt){let gt=100*(mt.loaded/mt.total);id('img_bar'+dt).style.width=Math.round(gt)+'%'},!1),ut.addEventListener('load',function(mt){id('img_bar'+dt).style.width='0%',id('img_load'+dt).classList.add('none');let gt=JSON.parse(mt.target.responseText);!0==gt.responds?(allimages.push(gt.filename),id('photo_'+dt).setAttribute('luci-file-name',gt.filename)):(swal('Error','Sorry something wrong. Image upload failed','error'),id('image_open_'+dt).remove())},!1),ut.addEventListener('error',function(){swal('Error','Sorry something wrong. Image upload failed','error'),id('image_open_'+dt).remove()},!1),ut.addEventListener('abort',function(){id('miovv'+et).value=0,id('miovv'+et).style.display='none',id('kity'+et).style.display='none'},!1),ut.send('value='+encodeURIComponent(tt.result)),0==dt&&c('tu')[0].classList.remove('none');delete_img()},tt.readAsDataURL(et)}
-else if('mp4'==Ze||'mpg'==Ze||'avi'==Ze||'m4v'==Ze){
+export function ghh(Ge, Qe) {
 
-    
-    c('upload_section')[0].classList.contains('none')&&c('upload_section')[0].classList.remove('none');
+    c('upload_section')[0].style.display = 'block', c('upload_items')[0].style.display = 'block', tylb(Qe);
+    let Ke = Ge.name,
+        Ze = Ke.substring(Ke.lastIndexOf('.') + 1).toLowerCase();
+    if ('gif' == Ze || 'png' == Ze || 'bmp' == Ze || 'jpeg' == Ze || 'jpg' == Ze) {
+        let et = Ge,
+            tt = new FileReader;
+        tt.onloadend = function() {
+            let dt = no++,
+                pt = document.createElement('div');
+            pt.id = 'image_open_' + dt, pt.setAttribute('class', 'items items_uploadimages'), pt.innerHTML = '<div class="protograpy_panel"><div class="photography_image_container"><div class="photography_image" id="photo_' + dt + '"><div class="photoimage-loader" id="img_load' + dt + '"><div id="myProgress"><div class="myBar" id="img_bar' + dt + '"></div></div></div><img src="' + tt.result + '" alt="photography"/><div class="danger_photo_remove" luci-data-type="0" luci-data-value="{' + dt + '}"><i class="icon icon-multiply"></i></div></div></div></div></div><div class="clearfix"></div>', 0 == c('items_uploadimages').length && c('upload_section')[0].classList.remove('none'), c('upload_items')[0].insertBefore(pt, c('upload_items')[0].childNodes[0]), id('image_opener').value = '';
+            let ut = ajaxObj('POST', URLS.UPLOADIMG);
+            ut.upload.addEventListener('progress', function(mt) {
+                let gt = 100 * (mt.loaded / mt.total);
+                id('img_bar' + dt).style.width = Math.round(gt) + '%'
+            }, !1), ut.addEventListener('load', function(mt) {
+                id('img_bar' + dt).style.width = '0%', id('img_load' + dt).classList.add('none');
+                let gt = JSON.parse(mt.target.responseText);
+                !0 == gt.responds ? (allimages.push(gt.filename), id('photo_' + dt).setAttribute('luci-file-name', gt.filename)) : (swal('Error', 'Sorry something wrong. Image upload failed', 'error'), id('image_open_' + dt).remove())
+            }, !1), ut.addEventListener('error', function() {
+                swal('Error', 'Sorry something wrong. Image upload failed', 'error'), id('image_open_' + dt).remove()
+            }, !1), ut.addEventListener('abort', function() {
+                id('miovv' + et).value = 0, id('miovv' + et).style.display = 'none', id('kity' + et).style.display = 'none'
+            }, !1), ut.send('value=' + encodeURIComponent(tt.result)), 0 == dt && c('tu')[0].classList.remove('none');
+            delete_img()
+        }, tt.readAsDataURL(et)
+    } else if ('mp4' == Ze || 'mpg' == Ze || 'avi' == Ze || 'm4v' == Ze) {
 
-    let reader = new FileReader();
-    reader.onload = function() {
-        var aud = new Audio(reader.result);
-        aud.onloadedmetadata = function(){
-            // sp.innerHTML = aud.duration;
-            // console.log(aud.duration);
-            // let durmins = Math.floor(aud.duration / 60);
-            let seacond = aud.duration;
+        console.log("My section 1");
 
-           // console.log(seacond)
+        c('upload_section')[0].classList.contains('none') && c('upload_section')[0].classList.remove('none');
 
-            if(!$('#switch').hasClass('switchOn')){
 
-                if($('#switches').hasClass("switchon"))
-                {
-                    if(seacond > 300){
+        if ($('#switches').hasClass("switchon")) {
 
-                        swal('Error','This post is talent type. You should add 5 minute video only.','error');
 
-                        if(no == 0 || no < 1){
-                            $('.upload_section').css("display","none");
-                            $(".additems").css("display","block");
+            console.log("My section 3");
+                            no++;
+                            let et = videono++,
+                                nt = document.createElement('div');
+                            nt.classList.add('up_videos'), nt.id = 'vi' + et, nt.innerHTML = '<div class="videouploadsection items"><div class="photography_image" id="video_' + et + '"><div class="photoimage-loader" id="video_load' + et + '"><div id="myProgress"><div class="myBar" id="video_bar' + et + '"></div></div></div><div id="player' + et + '"></div><div id="kity' + et + '" class="progressbar"><span class="widthupdate" id="miovv' + et + '"></span><span class="ty" id="progress_video' + et + '">0%</span></div><div class="danger_photo_remove" luci-data-value="{' + et + '}" luci-data-type="1"><i class="icon icon-multiply"></i></div>', c('upload_items')[0].insertBefore(nt, c('upload_items')[0].childNodes[0]);
+                            let ot = new FormData;
+                            ot.append('video', Ge);
+                            let it = new XMLHttpRequest;
+                            it.upload.addEventListener('progress', function(dt) {
+                                let ct = 100 * (dt.loaded / dt.total);
+                                //id('progress_video' + et).innerHTML = Math.round(ct) + '%';
+                                id('video_bar' + et).style.width = Math.round(ct) + '%'
+                                $('#vi'+et).find('.ty').html(Math.round(ct) + '%')
+                            }, !1), it.addEventListener('load', function(dt) {
+                                id('video_bar' + et).style.width = '0%';
+                                let ct = JSON.parse(dt.target.responseText);
+                                if (!0 != ct.error) {
+                                    id('kity' + et).style.display = 'none';
+                                    let pt = document.createElement('video');
+                                    pt.src = ct.filename, pt.controls = 'controls', id('player' + et).appendChild(pt), plyr.setup(), allvideos.push(ct.name), id('player' + et).setAttribute('luci-file-name', ct.name)
+                                } else {
+                                    $("#vi" + et).remove();
+                                    no--;
+
+                                    if (no == 0 || no < 1) {
+                                        $('.upload_section').css("display", "none");
+                                        $(".additems").css("display", "block");
+                                    }
+
+                                    swal('Error', 'This video is not uploaded properly please try again', 'error');
+
+
+                                }
+                            }, !1), it.addEventListener('abort', function() {
+                                id('miovv' + et).value = 0, id('miovv' + et).style.display = 'none', id('kity' + et).style.display = 'none'
+                            }, !1), it.open('POST', URLS.UPLOADVIDEO), it.send(ot)
+
+
+
+                            delete_img();
+
+                            hide_addbox();
+
+                            return false;
+
+
+
+
+        }
+
+        else{
+
+
+
+        let reader = new FileReader();
+        reader.onload = function() {
+            var aud = new Audio(reader.result);
+            aud.onloadedmetadata = function() {
+                // sp.innerHTML = aud.duration;
+                // console.log(aud.duration);
+                // let durmins = Math.floor(aud.duration / 60);
+                let seacond = aud.duration;
+
+
+                console.log("My section 2");
+                // console.log(seacond)
+
+                if (!$('#switch').hasClass('switchOn')) {
+
+                    if ($('#switches').hasClass("switchon")) {
+                        if (seacond > 300) {
+
+                            console.log("My section 3");
+
+                            swal('Error', 'This post is talent type. You should add 5 minute video only.', 'error');
+
+                            if (no == 0 || no < 1) {
+                                $('.upload_section').css("display", "none");
+                                $(".additems").css("display", "block");
+                            }
+
+                            return false;
+                        } else {
+
+                            console.log("My section 3");
+                            no++;
+                            let et = videono++,
+                                nt = document.createElement('div');
+                            nt.classList.add('up_videos'), nt.id = 'vi' + et, nt.innerHTML = '<div class="videouploadsection items"><div class="photography_image" id="video_' + et + '"><div class="photoimage-loader" id="video_load' + et + '"><div id="myProgress"><div class="myBar" id="video_bar' + et + '"></div></div></div><div id="player' + et + '"></div><div id="kity' + et + '" class="progressbar"><span class="widthupdate" id="miovv' + et + '"></span><span class="ty" id="progress_video' + et + '">0%</span></div><div class="danger_photo_remove" luci-data-value="{' + et + '}" luci-data-type="1"><i class="icon icon-multiply"></i></div>', c('upload_items')[0].insertBefore(nt, c('upload_items')[0].childNodes[0]);
+                            let ot = new FormData;
+                            ot.append('video', Ge);
+                            let it = new XMLHttpRequest;
+                            it.addEventListener('progress', function(dt) {
+                                let ct = 100 * (dt.loaded / dt.total);
+                                //id('progress_video' + et).innerHTML = Math.round(ct) + '%';
+                                id('video_bar' + et).style.width = Math.round(ct) + '%'
+                                $('#vi'+et).find('.ty').html(Math.round(ct) + '%')
+                            }, !1), it.addEventListener('load', function(dt) {
+                                id('video_bar' + et).style.width = '0%';
+                                let ct = JSON.parse(dt.target.responseText);
+                                if (!0 != ct.error) {
+                                    id('kity' + et).style.display = 'none';
+                                    let pt = document.createElement('video');
+                                    pt.src = ct.filename, pt.controls = 'controls', id('player' + et).appendChild(pt), plyr.setup(), allvideos.push(ct.name), id('player' + et).setAttribute('luci-file-name', ct.name)
+                                } else {
+                                    $("#vi" + et).remove();
+                                    no--;
+
+                                    if (no == 0 || no < 1) {
+                                        $('.upload_section').css("display", "none");
+                                        $(".additems").css("display", "block");
+                                    }
+
+                                    swal('Error', 'This video is not uploaded properly please try again', 'error');
+
+
+                                }
+                            }, !1), it.addEventListener('abort', function() {
+                                id('miovv' + et).value = 0, id('miovv' + et).style.display = 'none', id('kity' + et).style.display = 'none'
+                            }, !1), it.open('POST', URLS.UPLOADVIDEO), it.send(ot)
+
+
+
+                            delete_img();
+
+                            hide_addbox();
+
+                            return false;
+                        }
+                    } else {
+
+                        if (seacond > 30) {
+
+                            //alert('You should add half minute video only')
+
+                            swal('Error', 'You should add half minute video only.', 'error');
+
+                            if (no == 0 || no < 1) {
+                                $('.upload_section').css("display", "none");
+                                $(".additems").css("display", "block");
+                            }
+
+                            return false;
+                        } else {
+
+                            console.log("My section 3");
+                            no++;
+                            let et = videono++,
+                                nt = document.createElement('div');
+                            nt.classList.add('up_videos'), nt.id = 'vi' + et, nt.innerHTML = '<div class="videouploadsection items"><div class="photography_image" id="video_' + et + '"><div class="photoimage-loader" id="video_load' + et + '"><div id="myProgress"><div class="myBar" id="video_bar' + et + '"></div></div></div><div id="player' + et + '"></div><div id="kity' + et + '" class="progressbar"><span class="widthupdate" id="miovv' + et + '"></span><span class="ty" id="progress_video' + et + '">0%</span></div><div class="danger_photo_remove" luci-data-value="{' + et + '}" luci-data-type="1"><i class="icon icon-multiply"></i></div>', c('upload_items')[0].insertBefore(nt, c('upload_items')[0].childNodes[0]);
+                            let ot = new FormData;
+                            ot.append('video', Ge);
+                            let it = new XMLHttpRequest;
+                            it.upload.addEventListener('progress', function(dt) {
+                                let ct = 100 * (dt.loaded / dt.total);
+                                //id('progress_video' + et).innerHTML = Math.round(ct) + '%';
+                                id('video_bar' + et).style.width = Math.round(ct) + '%'
+                                $('#vi'+et).find('.ty').html(Math.round(ct) + '%');
+                            }, !1), it.addEventListener('load', function(dt) {
+                                id('video_bar' + et).style.width = '0%';
+                                let ct = JSON.parse(dt.target.responseText);
+                                if (!0 != ct.error) {
+                                    id('kity' + et).style.display = 'none';
+                                    let pt = document.createElement('video');
+                                    pt.src = ct.filename, pt.controls = 'controls', id('player' + et).appendChild(pt), plyr.setup(), allvideos.push(ct.name), id('player' + et).setAttribute('luci-file-name', ct.name)
+                                } else {
+                                    $("#vi" + et).remove();
+                                    no--;
+
+                                    if (no == 0 || no < 1) {
+                                        $('.upload_section').css("display", "none");
+                                        $(".additems").css("display", "block");
+                                    }
+
+                                    swal('Error', 'This video is not uploaded properly please try again', 'error');
+
+                                }
+                            }, !1), it.addEventListener('abort', function() {
+                                id('miovv' + et).value = 0, id('miovv' + et).style.display = 'none', id('kity' + et).style.display = 'none'
+                            }, !1), it.open('POST', URLS.UPLOADVIDEO), it.send(ot)
+                            delete_img();
+                            return false;
                         }
 
-                        return false;
                     }
 
-                    else {
+                } else {
+
+                    if (seacond > 300) {
+
+
+
+
+                        swal('Error', 'This post is challenge type. You should add 5 minute video only.', 'error');
+                        if (no == 0 || no < 1) {
+                            $('.upload_section').css("display", "none");
+                            $(".additems").css("display", "block");
+                        }
+                        return false;
+                    } else {
+
+                        console.log("My section 3");
                         no++;
-                        let et=videono++,nt=document.createElement('div');
-                        nt.classList.add('up_videos'),nt.id='vi'+et,nt.innerHTML='<div class="videouploadsection items"><div class="photography_image" id="video_'+et+'"><div class="photoimage-loader" id="video_load'+et+'"><div id="myProgress"><div class="myBar" id="video_bar'+et+'"></div></div></div><div id="player'+et+'"></div><div id="kity'+et+'" class="progressbar"><span class="widthupdate" id="miovv'+et+'"></span><span class="ty" id="progress_video'+et+'">0%</span></div><div class="danger_photo_remove" luci-data-value="{'+et+'}" luci-data-type="1"><i class="icon icon-multiply"></i></div>',c('upload_items')[0].insertBefore(nt,c('upload_items')[0].childNodes[0]);let ot=new FormData;ot.append('video',Ge);let it=new XMLHttpRequest;it.addEventListener('progress',function(dt){let ct=100*(dt.loaded/dt.total);id('progress_video'+et).innerHTML=Math.round(ct)+'%';id('video_bar'+et).style.width=Math.round(ct)+'%'},!1),it.addEventListener('load',function(dt){id('video_bar'+et).style.width='0%';let ct=JSON.parse(dt.target.responseText);if(!0!=ct.error){id('kity'+et).style.display='none';let pt=document.createElement('video');pt.src=ct.filename,pt.controls='controls',id('player'+et).appendChild(pt),plyr.setup(),allvideos.push(ct.name),id('player'+et).setAttribute('luci-file-name',ct.name)}else{$("#vi"+et).remove();no--;
+                        let et = videono++,
+                            nt = document.createElement('div');
+                        nt.classList.add('up_videos'), nt.id = 'vi' + et, nt.innerHTML = '<div class="videouploadsection items"><div class="photography_image" id="video_' + et + '"><div class="photoimage-loader" id="video_load' + et + '"><div id="myProgress"><div class="myBar" id="video_bar' + et + '"></div></div></div><div id="player' + et + '"></div><div id="kity' + et + '" class="progressbar"><span class="widthupdate" id="miovv' + et + '"></span><span class="ty" id="progress_video' + et + '">0%</span></div><div class="danger_photo_remove" luci-data-value="{' + et + '}" luci-data-type="1"><i class="icon icon-multiply"></i></div>', c('upload_items')[0].insertBefore(nt, c('upload_items')[0].childNodes[0]);
+                        let ot = new FormData;
+                        ot.append('video', Ge);
+                        let it = new XMLHttpRequest;
+                        it.addEventListener('progress', function(dt) {
+                            let ct = 100 * (dt.loaded / dt.total);
+                            //id('progress_video' + et).innerHTML = Math.round(ct) + '%';
+                            id('video_bar' + et).style.width = Math.round(ct) + '%';
+                            $('#vi'+et).find('.ty').html(Math.round(ct) + '%');
+                        }, !1), it.addEventListener('load', function(dt) {
+                            id('video_bar' + et).style.width = '0%';
+                            let ct = JSON.parse(dt.target.responseText);
+                            if (!0 != ct.error) {
+                                id('kity' + et).style.display = 'none';
+                                let pt = document.createElement('video');
+                                pt.src = ct.filename, pt.controls = 'controls', id('player' + et).appendChild(pt), plyr.setup(), allvideos.push(ct.name), id('player' + et).setAttribute('luci-file-name', ct.name)
+                            } else {
+                                $("#vi" + et).remove();
+                                no--;
+                                if (no == 0 || no < 1) {
+                                    $('.upload_section').css("display", "none");
+                                    $(".additems").css("display", "block");
+                                }
 
-                                 if(no == 0 || no < 1){
-                                                        $('.upload_section').css("display","none");
-                                                        $(".additems").css("display","block");
-                                                    }
-
-                                swal('Error','This video is not uploaded properly please try again','error');
-
-
-                    }},!1),it.addEventListener('abort',function(){id('miovv'+et).value=0,id('miovv'+et).style.display='none',id('kity'+et).style.display='none'},!1),it.open('POST',URLS.UPLOADVIDEO),it.send(ot)
-                        
-
-
+                                swal('Error', 'This video is not uploaded properly please try again', 'error');
+                            }
+                        }, !1), it.addEventListener('abort', function() {
+                            id('miovv' + et).value = 0, id('miovv' + et).style.display = 'none', id('kity' + et).style.display = 'none'
+                        }, !1), it.open('POST', URLS.UPLOADVIDEO), it.send(ot)
                         delete_img();
-
                         hide_addbox();
-
-                        return false;
-                    }
-                }
-
-                else {
-
-                    if(seacond > 30){
-
-                        //alert('You should add half minute video only')
-
-                        swal('Error','You should add half minute video only.','error');
-
-                        if(no == 0 || no < 1){
-                            $('.upload_section').css("display","none");
-                            $(".additems").css("display","block");
-                        }
-
-                        return false;
-                    }
-
-                    else {
-                        no++;
-                        let et=videono++,nt=document.createElement('div');
-                        nt.classList.add('up_videos'),nt.id='vi'+et,nt.innerHTML='<div class="videouploadsection items"><div class="photography_image" id="video_'+et+'"><div class="photoimage-loader" id="video_load'+et+'"><div id="myProgress"><div class="myBar" id="video_bar'+et+'"></div></div></div><div id="player'+et+'"></div><div id="kity'+et+'" class="progressbar"><span class="widthupdate" id="miovv'+et+'"></span><span class="ty" id="progress_video'+et+'">0%</span></div><div class="danger_photo_remove" luci-data-value="{'+et+'}" luci-data-type="1"><i class="icon icon-multiply"></i></div>',c('upload_items')[0].insertBefore(nt,c('upload_items')[0].childNodes[0]);let ot=new FormData;ot.append('video',Ge);let it=new XMLHttpRequest;it.addEventListener('progress',function(dt){let ct=100*(dt.loaded/dt.total);id('progress_video'+et).innerHTML = Math.round(ct)+'%';id('video_bar'+et).style.width=Math.round(ct)+'%'},!1),it.addEventListener('load',function(dt){id('video_bar'+et).style.width='0%';let ct=JSON.parse(dt.target.responseText);if(!0!=ct.error){id('kity'+et).style.display='none';let pt=document.createElement('video');pt.src=ct.filename,pt.controls='controls',id('player'+et).appendChild(pt),plyr.setup(),allvideos.push(ct.name),id('player'+et).setAttribute('luci-file-name',ct.name)}else{$("#vi"+et).remove();no--;
-
-                             if(no == 0 || no < 1){
-                                                        $('.upload_section').css("display","none");
-                                                        $(".additems").css("display","block");
-                                                    }
-
-                                swal('Error','This video is not uploaded properly please try again','error');
-
-                    }},!1),it.addEventListener('abort',function(){id('miovv'+et).value=0,id('miovv'+et).style.display='none',id('kity'+et).style.display='none'},!1),it.open('POST',URLS.UPLOADVIDEO),it.send(ot)
-                        delete_img();
                         return false;
                     }
 
                 }
 
-            }
-
-            else {
-
-                if (seacond > 300) {
-
-
-                    swal('Error', 'This post is challenge type. You should add 5 minute video only.', 'error');
-                    if(no == 0 || no < 1){
-                            $('.upload_section').css("display","none");
-                            $(".additems").css("display","block");
-                        }
-                    return false;
-                }
-
-                else {
-                    no++;
-                    let et=videono++,nt=document.createElement('div');
-                    nt.classList.add('up_videos'),nt.id='vi'+et,nt.innerHTML='<div class="videouploadsection items"><div class="photography_image" id="video_'+et+'"><div class="photoimage-loader" id="video_load'+et+'"><div id="myProgress"><div class="myBar" id="video_bar'+et+'"></div></div></div><div id="player'+et+'"></div><div id="kity'+et+'" class="progressbar"><span class="widthupdate" id="miovv'+et+'"></span><span class="ty" id="progress_video'+et+'">0%</span></div><div class="danger_photo_remove" luci-data-value="{'+et+'}" luci-data-type="1"><i class="icon icon-multiply"></i></div>',c('upload_items')[0].insertBefore(nt,c('upload_items')[0].childNodes[0]);let ot=new FormData;ot.append('video',Ge);let it=new XMLHttpRequest;it.addEventListener('progress',function(dt){let ct=100*(dt.loaded/dt.total);id('progress_video'+et).innerHTML = Math.round(ct)+'%';id('video_bar'+et).style.width=Math.round(ct)+'%'},!1),it.addEventListener('load',function(dt){id('video_bar'+et).style.width='0%';let ct=JSON.parse(dt.target.responseText);if(!0!=ct.error){id('kity'+et).style.display='none';let pt=document.createElement('video');pt.src=ct.filename,pt.controls='controls',id('player'+et).appendChild(pt),plyr.setup(),allvideos.push(ct.name),id('player'+et).setAttribute('luci-file-name',ct.name)}else{$("#vi"+et).remove();no--;
-                 if(no == 0 || no < 1){
-                                                        $('.upload_section').css("display","none");
-                                                        $(".additems").css("display","block");
-                                                    }
-
-                                swal('Error','This video is not uploaded properly please try again','error');
-                            }},!1),it.addEventListener('abort',function(){id('miovv'+et).value=0,id('miovv'+et).style.display='none',id('kity'+et).style.display='none'},!1),it.open('POST',URLS.UPLOADVIDEO),it.send(ot)
-                    delete_img();
-                    hide_addbox();
-                    return false;
-                }
-
-            }
-
+            };
         };
-    };
-    reader.readAsDataURL(Ge);
-
-
-
+        reader.readAsDataURL(Ge);
 
     }
 
-    else {
 
-         if(no == 0 || no < 1){
-                                                        $('.upload_section').css("display","none");
-                                                        $(".additems").css("display","block");
-                                                    }
+    } else {
+
+        if (no == 0 || no < 1) {
+            $('.upload_section').css("display", "none");
+            $(".additems").css("display", "block");
+        }
 
 
-        swal('Error','This format is not supported','error');
+        swal('Error', 'This format is not supported', 'error');
         return false;
     }
 
@@ -395,42 +546,58 @@ export function delete_img() {
                     let Qe = this.getAttribute('luci-data-value'),
                         Ke = Qe.replace('{', '').replace('}', ''),
                         Ze = id('photo_' + Ke).getAttribute('luci-file-name');
+                    
+
+
                     swal({
-                        title: 'Are you sure?',
-                        text: 'You won\'t be able to revert this!',
-                        type: 'warning',
-                        showCancelButton: !0,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }, function() {
+                      title: "Are you sure?",
+                      text: 'You won\'t be able to revert this!',
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
                         removeA(allimages, Ze), id('photo_' + Ke).remove(), id('image_open_' + Ke).remove(), swal('Deleted!', 'Your imaginary file has been deleted.', 'success')
                         no--;
                         if(no == 0 || no < 1){
                             $('.upload_section').css("display","none");
                             $(".additems").css("display","block");
                         }
-                    })
+                      } else {
+                        //swal("Your imaginary file is safe!");
+                      }
+                    });
+
+
+
+
                 } else {
                     let Qe = this.getAttribute('luci-data-value'),
                         Ke = Qe.replace('{', '').replace('}', ''),
                         Ze = id('player' + Ke).getAttribute('luci-file-name');
+                    
                     swal({
-                        title: 'Are you sure?',
-                        text: 'You won\'t be able to revert this!',
-                        type: 'warning',
-                        showCancelButton: !0,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }, function(et) {
-                        et ? (removeA(allvideos, Ze), id('player' + Ke).remove(), id('vi' + Ke).remove()) : swal.close()
+                      title: "Are you sure?",
+                      text: 'You won\'t be able to revert this!',
+                      icon: "warning",
+                      buttons: true,
+                      dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        (removeA(allvideos, Ze), id('player' + Ke).remove(), id('vi' + Ke).remove()) 
                         no--;
                         if(no == 0 || no < 1){
                             $('.upload_section').css("display","none");
                             $(".additems").css("display","block");
                         }
-                    })
+                      } else {
+                        //swal("Your imaginary file is safe!");
+                      }
+                    });
+
+
                 }
         }, !1)
 
@@ -558,6 +725,21 @@ export function _(x) {
 
 export function formormality(){
 
+    if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+   document.getElementById('post-small-btn').style.display='block';
+    document.getElementById('postbox').style.display='none'
+    document.getElementById('post-small-close-btn').style.display='none';
+  }
+ 
+    
+
     if($('#switch').hasClass('switchOn')){
         $('#switch').click();
     }
@@ -589,7 +771,7 @@ export function formormality(){
         $('#postbox').removeClass("edit_post");
 
     for(let Ge=0;Ge<c('items_uploadimages').length;Ge++)c('items_uploadimages')[Ge].remove();
-
+        $(".makeMeList").val('');
 
 
     c('upload_items')[0]&&(c('upload_items')[0].style.display='none');
@@ -633,6 +815,28 @@ export function formormality(){
     if(!$("#tag_con").hasClass("none")){$("#tag_con").addClass("none");}
 
     $('#custom_checkbox1').attr('checked', false); 
+
+    if(document.getElementById("postsectioncl")!=null){
+
+                            
+    
+                            if($("#postsectioncl").hasClass("active")){
+                                    
+                                   // $("#postsectioncl").click();
+
+
+                            }
+
+                            else if($("#talent").hasClass("active")){
+
+
+                                
+                               document.getElementById("switches").click();
+
+                            }
+
+                        }
+
 
 
 }

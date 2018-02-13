@@ -102,6 +102,7 @@ export default class Love extends Component{
 			let div = document.createElement("div");
 			div.id="like_listing";
 			document.body.appendChild(div);
+     // div.innerHTML='<div id="like_listing2" class="default-modal-mu"></div>';
 
 
 		}

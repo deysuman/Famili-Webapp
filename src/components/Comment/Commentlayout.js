@@ -27,6 +27,11 @@ export default class Commentlayout extends Component{
 
     }
 
+    tag (e){
+    	
+		return {__html: e};
+	}
+
 	template (){
 
 		const type = this.props.type;

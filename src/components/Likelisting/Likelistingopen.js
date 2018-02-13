@@ -19,10 +19,15 @@ export default class Likelistingopen extends Component{
     render (){
         return (
             <div id="myModal" onClick={this.closeModal} className="default-modal">
-                <Likelisting likesdata={this.props.likesdata}/>
+                <div className="default-modal-mu">
+
+                    <Likelisting likesdata={this.props.likesdata}/>
                 <button onClick={this.closeModal} className="default-modalclose">
                     <i className="icon icon-multiply"></i>
                 </button>
+
+                </div>
+                
             </div>
         )
     }

@@ -6,6 +6,7 @@ import Normalcomment from "./NormalComment/NormalComment";
 import Ajax from "../../../lib/ajax";
 import {URLS} from "../../../constants/api";
 import {updatetime} from "../../../helper/Postbox/Postbox";
+import swal from 'sweetalert';
 
 
 export default class Comment extends Component{
@@ -235,16 +236,18 @@ export default class Comment extends Component{
 
           swal(
               {
-                  title:'Are you sure?',
+                   title:'Are you sure?',
                   text:'You won\'t be able to revert this!',
-                  type:'warning',
-                  showCancelButton:!0,
-                  confirmButtonColor:'#3085d6',
-                  cancelButtonColor:'#d33',
-                  confirmButtonText:'Yes, delete it!'
-              },
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+              })
+          .then(willDelete => {
 
-                  function(){
+              if(willDelete){
+
+
+
 
                       const data='postid='+update_id+'&commentid='+com_id;
 
@@ -301,7 +304,14 @@ export default class Comment extends Component{
 
                       });
 
-            });
+
+              }
+
+
+
+
+          })
+
 
     }
 
@@ -438,7 +448,7 @@ export default class Comment extends Component{
 
                 return (
                     <button className="tablinks" onClick={this.anonmyousComment} ref="dfs" data-related="anonymous_comments">
-                        Anonymous Comments
+                        Honest views
                     </button>)
 
             }
@@ -447,7 +457,7 @@ export default class Comment extends Component{
                 if(this.state.postdata.commentShow==true){
 
                     return (<button className="tablinks" onClick={this.anonmyousComment} ref="dfs" data-related="anonymous_comments">
-                        Anonymous Comments
+                        Honest views
                     </button>)
 
                 }

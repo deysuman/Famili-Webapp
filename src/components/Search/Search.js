@@ -62,6 +62,9 @@ export default class Search extends Component{
 			unique : Math.random(),
 			socket : '',
             isChallenge : false,
+            currentpage : 1,
+            ram : false,
+            isLoading2: false
 
 
 		}
@@ -186,6 +189,7 @@ export default class Search extends Component{
 		const checkTalent = this.state.isTalent;
 		const loading = this.state.isLoading;
         const checkChanllenge = this.state.isChallenge;
+        const loading2 = this.state.isLoading2;
 
 		return (
 		    <div>
@@ -221,7 +225,7 @@ export default class Search extends Component{
 
                         {this.layout()}
 
-
+                        {loading2 ? <div id="loading"> <span>Loading.....</span></div> :null}
 
 
 				 	</div>
@@ -335,7 +339,10 @@ export default class Search extends Component{
 
 
          this.setState({
-             isLoading : true
+             isLoading : true,
+             ram : true,
+             isLoading2 : false,
+             currentpage : 1
 		 })
 
 
@@ -367,7 +374,7 @@ export default class Search extends Component{
             console.log("Search type" + type)
 
             const reactThis = this;
-            const data = "type=" + type + "&terms=" + encodeURIComponent(val) + "&salt="+encodeURIComponent(salt) + "&signature="+this.state.unique;
+            const data = "type=" + type + "&terms=" + encodeURIComponent(val) + "&salt="+encodeURIComponent(salt) + "&signature="+this.state.unique+"&page=1";
             //this.state.socket.emit("new_message",{"message":"suman"});
 
             if(typeof ajax_request !== 'undefined')
@@ -437,7 +444,166 @@ export default class Search extends Component{
                         isLoading : false,
                         results : reactThis.state.results,
                         noresult : reactThis.state.noresult,
-                        peoples : reactThis.state.peoples
+                        peoples : reactThis.state.peoples,
+                        currentpage : reactThis.state.currentpage + 1,
+                        ram : false
+                    });
+
+                    console.log(this.state.peoples);
+
+                }.bind(this),
+                error:function(data){
+
+                }.bind(this)
+            });
+
+
+
+
+            /* Ajax(URLS.SEARCHAPI, data, reactThis, function (data) {
+
+
+            });*/
+
+        }
+        return false;
+
+    }
+
+    doSearch2(value){     
+
+        if(value < 1)
+        {
+
+            return false
+        }
+
+         // $.xhrPool and $.ajaxSetup are the solution
+
+
+
+
+
+         this.setState({
+             isLoading2 : true,
+             ram : true
+         })
+
+
+        const checkPost = this.state.isPost;
+        const checkPeople = this.state.isPeople;
+        const checkTalent = this.state.isTalent;
+        const checkChallenge = this.state.isChallenge;
+        let val = value;
+        let salt = this.state.salt.toLowerCase();
+        if(val!="") {
+
+            let type = 'post';
+
+            if(checkPost){
+                type = 'post'
+            }
+
+            else if(checkPeople){
+                type = 'people'
+            }
+
+            else if(checkTalent){
+                type = 'talent'
+            }
+            else if(checkChallenge){
+                type = 'challenge'
+            }
+
+            console.log("Search type" + type)
+
+            const reactThis = this;
+            const data = "type=" + type + "&terms=" + encodeURIComponent(val) + "&salt="+encodeURIComponent(salt) + "&signature="+this.state.unique+"&page="+this.state.currentpage;
+            //this.state.socket.emit("new_message",{"message":"suman"});
+
+            if(typeof ajax_request !== 'undefined')
+                ajax_request.abort();
+
+            ajax_request = $.ajax({
+                type:"POST",
+                url:URLS.MAINURL + URLS.SEARCHAPI,
+                data :data,
+                dataType:"json",
+                cache:false,
+                timeout:50000,
+                beforeSend :function(data) {
+
+                     //$.xhrPool.push(jqXHR);
+
+                    console.log("Total ajax "+$.xhrPool.length);
+
+                    $.xhrPool.abortAll();
+
+                    reactThis.setState({
+                        isLoading2 : true
+                    })
+
+                }.bind(this),
+                success:function(data){
+
+                    
+
+                    if(data.updates.length > 0){
+
+                        if(data.method == 0) {
+
+                            for (let i = 0; i < data.updates.length; i++) {
+
+                                let pos = reactThis.state.peoples.map((el) => el.userid).indexOf(data.updates[i].userid);
+
+                                if(pos == -1){
+
+                                    reactThis.state.peoples.push(data.updates[i]);
+
+                                }
+
+                                
+
+                            }
+                        }
+
+                        else if(data.method == 1 || data.method == 2 || data.method == 3) {
+
+                            for (let i = 0; i < data.updates.length; i++) {
+
+                                
+                                //reactThis.state.data.unshift(data.updates[i]);
+
+                                let pos = reactThis.state.results.map((el) => el.update_id).indexOf(data.updates[i].update_id);
+
+                                if(pos == -1){
+
+                                    reactThis.state.results.push(data.updates[i]);
+
+                                }
+
+                            }
+
+                        }
+
+
+
+
+                    }
+
+                    else{
+
+                        //reactThis.state.noresult = true;
+
+                    }
+
+                    reactThis.setState({
+                        isLoading : false,
+                        results : reactThis.state.results,
+                        noresult : reactThis.state.noresult,
+                        peoples : reactThis.state.peoples,
+                        currentpage : reactThis.state.currentpage + 1,
+                        ram : false
                     });
 
                     console.log(this.state.peoples);
@@ -462,9 +628,36 @@ export default class Search extends Component{
     }
 
 
+    
+
+
+
+
+
+
+
+
+
+
+
     ajsearch () {
        console.log("hi");
+
+         this.setState({
+             isLoading : true,
+             ram : true,
+             isLoading2 : false,
+             currentpage : 1
+         })
        this.doSearch(this.state.value);
+    }
+
+    load_more () {
+        if(this.state.ram == false){
+           console.log("hi");
+           this.doSearch2(this.state.value); 
+        }
+       
     }
 
     componentDidMount(){
@@ -514,6 +707,17 @@ $(function() {
         this.socketWorks();
 
         Timeupdate();
+
+        let reactThis = this;
+
+
+        $(window).scroll(function(){
+        if ($(window).scrollTop() == $(document).height() - $(window).height()){
+                console.log("Test");
+                reactThis.load_more();
+
+            }
+        });
 
 
 

@@ -7,6 +7,8 @@ import io from 'socket.io-client';
 import Progressloader from "../loading/Progressloader";
 import Pertipate from "../ChallengePerticipate/Perticipate";
 import {Timeupdate,updatetime} from "../../helper/Postbox/Postbox";
+import swal from 'sweetalert';
+
 
 let socket = io('https://'+document.domain+':3000');
 
@@ -25,7 +27,8 @@ export default class Postutil extends Component{
             ram : false,
             postbox : true,
             Postcontainer : true,
-            currentsec : 0
+            currentsec : 0,
+            layout : true
         }
 
         this.updateAjaxSubmit = this.updateAjaxSubmit.bind(this);
@@ -176,11 +179,11 @@ export default class Postutil extends Component{
        let reactThis=this;
        let rows = 2;//Math.floor(Math.random() * 2) + 1;
 
-       let extras = "&rows="+rows+"&page_number="+this.state.currentpage;
+       let extras = "&rows="+rows+"&page_number=1";
        reactThis.state.data.length = 0;
        reactThis.setState({
                 ram : false,
-                currentpage : 0,
+                currentpage : 1,
                 loading : true,
                 data : reactThis.state.data
         });
@@ -197,7 +200,7 @@ export default class Postutil extends Component{
                 reactThis.state.data.length = 0;
                 for (let i = 0; i < data.updates.length; i++) {
 
-                    let pos = reactThis.state.data.map((el) => el.update_id).indexOf(data.updates.update_id);
+                    let pos = reactThis.state.data.map((el) => el.update_id).indexOf(data.updates[i].update_id);
 
                     if(pos == -1){
 
@@ -245,7 +248,7 @@ export default class Postutil extends Component{
                 
                 for (let i = 0; i < data.updates.length; i++) {
 
-                    let pos = reactThis.state.data.map((el) => el.update_id).indexOf(data.updates.update_id);
+                    let pos = reactThis.state.data.map((el) => el.update_id).indexOf(data.updates[i].update_id);
 
                     if(pos == -1){
 
@@ -301,9 +304,57 @@ export default class Postutil extends Component{
 
     componentDidMount (){
 
+
+
         this.updatesFromServer();
 
         let reactThis = this;
+
+         let path = window.location.pathname;
+
+        if (/profile/i.test(path) || /dashboard/i.test(path)){
+
+            reactThis.setState({layout : false});
+            reactThis.forceUpdate();
+
+        }
+
+        if(typeof showlayout !== 'undefined'){
+
+                    if(showlayout == 1){
+
+                       reactThis.setState({layout : false});
+                       reactThis.forceUpdate();
+                       
+
+                    }
+
+                   
+
+        }
+
+/*
+         $(window).scroll(function(){
+        if ($(window).scrollTop() == $(document).height() - $(window).height()){
+                console.log("Test");
+                reactThis.load_more();
+
+            }
+        });*/
+
+
+         $(window).unbind('scroll');
+
+    $(window).bind('scroll', function () {
+
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+           reactThis.load_more();
+      }
+    }.bind(this));
+
+
+  
+
 
         /*$(function () {
 
@@ -409,7 +460,7 @@ export default class Postutil extends Component{
 
                        }
 
-                       reactThis.setState({postbox:true,currentsec : 0})
+                       reactThis.setState({postbox:true,currentsec : 0,currentpage : 0})
 
                     });
 
@@ -450,7 +501,7 @@ export default class Postutil extends Component{
                                 }
                                
 
-                               reactThis.setState({postbox:true,currentsec : 1})
+                               reactThis.setState({postbox:true,currentsec : 1,currentpage : 0})
 
                             });
 
@@ -489,7 +540,7 @@ export default class Postutil extends Component{
                                     document.getElementById("likesectioncl").classList.add('active');
                                 }
 
-                               reactThis.setState({postbox:false,currentsec : 2})
+                               reactThis.setState({postbox:false,currentsec : 2,currentpage : 0})
 
                             });
 
@@ -531,7 +582,7 @@ export default class Postutil extends Component{
 
                            
 
-                           reactThis.setState({postbox:false,currentsec : 3})
+                           reactThis.setState({postbox:false,currentsec : 3,currentpage : 1})
 
                         });
 
@@ -564,6 +615,17 @@ export default class Postutil extends Component{
 
 
                 }
+
+
+                
+
+               
+
+
+
+
+
+
             }
 
             
@@ -571,13 +633,7 @@ export default class Postutil extends Component{
         }
 
 
-        $(window).scroll(function(){
-        if ($(window).scrollTop() == $(document).height() - $(window).height()){
-                console.log("Test");
-                reactThis.load_more();
-
-            }
-        });
+       
 
 
 
@@ -1142,6 +1198,35 @@ export default class Postutil extends Component{
     }
 
 
+    ShowLayout(){
+
+        if(this.state.layout){
+
+
+            return (
+
+                <div>
+
+                 {this.TemplatePostBox()}  
+
+                 {this.adverticement()}                
+
+                 {this.TemplatePostsContainer()}
+
+                 {this.Router()}
+
+                 </div>
+
+             )
+
+
+        }
+
+        
+
+    }
+
+
 
     render (){
 
@@ -1163,15 +1248,8 @@ export default class Postutil extends Component{
                 {this.Template()}
 
                 <div className={ls}>
-
-                    {this.TemplatePostBox()}  
-
-                    {this.adverticement()}                
-
-                    {this.TemplatePostsContainer()}
-
-                    {this.Router()}
-
+                   
+                    {this.ShowLayout()}
 
                 </div>
 

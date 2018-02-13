@@ -67,6 +67,23 @@ export default class Commentadapter extends Component{
     }
 
 
+    reportcomment (y){
+
+        const reactThis=this;
+        const data='commentid='+y.com_id;
+
+        $("body").append('<div id="report_comment"></div>');
+
+        Ajax(URLS.REPORT, data , reactThis,
+          function(data){
+            $("#report_comment").html(data);
+          }
+        );
+
+    }
+
+
+
     actionLayout(comment,index){
 
 
@@ -204,7 +221,7 @@ export default class Commentadapter extends Component{
 
 
 		else{
-			return(<div><a data-testid="">Report</a></div>);
+			return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
 		}
 
 	}

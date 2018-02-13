@@ -1,6 +1,25 @@
 import React,{Component} from "react";
 
+import Likelistingpeople from "./Likelistingpeople"
+
 export default class Likelisting extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.stopclick = this.stopclick.bind(this);
+
+    }
+
+
+    stopclick(event){
+
+        event.preventDefault();
+        event.stopPropagation();
+
+    }
+
+
 
     render (){
 
@@ -12,25 +31,19 @@ export default class Likelisting extends Component{
 
 
 
-            return (<div key={Math.random()} className="about-right-mutual-list">
-                <div className="about-right-mutual-list-image">
-                    <img src={update.img} alt="" />
-                </div>
-                <div className="about-right-mutual-list-text ">
-                    <h2>{update.fullname}</h2>
-                    <p><a href="#" className="myBtn"><span>21</span>Mutual friends</a></p>
-                </div>
-                <div className="about-mutual-popt-button">
-                    <a href="#">Intaration</a>
-                </div>
-            </div>)
+
+
+            //let ui = (update.is_follow == ture) ? 'Unfollow' : 'Follow';
+
+
+            return (<Likelistingpeople value={update}/>)
 
 
 
 
         },this);
 
-        return (<div className="default-modal-content"><div className="modal-inner-scroll">{updates}</div></div>)
+        return (<div onClick={this.stopclick} className="default-modal-content"><div className="modal-inner-scroll">{updates}</div></div>)
 
     }
 

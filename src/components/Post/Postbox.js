@@ -34,6 +34,7 @@ import TagsInput from 'react-tagsinput'
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import DropdownMenu from 'react-dd-menu';
+import swal from 'sweetalert';
 
 let handleFinish = function () {
     console.log('Skynet has become self-aware!');
@@ -449,7 +450,7 @@ export default class Postbox extends Component{
     toggleCommentmode (){
         let Ge=id('custom_checkbox1');
         anoncom=!0==id('custom_checkbox1').checked?0:1;
-        $(".makeMeList").val('');
+        
 
     }
 
@@ -570,18 +571,20 @@ export default class Postbox extends Component{
             swal({
                 title: 'Are you sure?',
                 text: 'Do you want to cancel this post',
-                type: 'warning',
-                showCancelButton: !0,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, cancel it!'
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
             }).then(willDelete => {
 
                 if (willDelete) {
+
+
+
                  
                     if (reactThis.state.editworking == false) {
                         reactThis.reacttoggleCommentmode();
-                        Cancelpost();                    
+                        Cancelpost(); 
+                        $(".makeMeList").val('');                   
                         reactThis.setState({
                             tags : [],
                             Taggedusers : [],
@@ -594,6 +597,7 @@ export default class Postbox extends Component{
                         reactThis.reacttoggleCommentmode();
                         Cancelpost();
                         reactThis.state.tags.length = 0;
+                        $(".makeMeList").val('');
                         reactThis.setState({
                             tags : [],
                             Taggedusers : [],
@@ -609,6 +613,9 @@ export default class Postbox extends Component{
                         reactThis.change_globals();
 
                         lop =0 ;
+
+
+
                     }
                 }
 
@@ -768,6 +775,8 @@ export default class Postbox extends Component{
                 id("postbox").classList.remove("edit_post");
                 editworking==false;
 
+                 
+
                 let pos = autoScrollTo("post_"+update.update_id);
 
                 $('html, body').animate({
@@ -841,6 +850,8 @@ export default class Postbox extends Component{
 
             Reactthis.change_globals();
 
+            
+
         }};
             c.send("posttext="+encodeURIComponent(a)+"&image="+allimages+"&video="+allvideos+"&postprivacy="+pmode+"&peopletag="+b+"&posttype="+mode+"&commentmode="+anoncom+"&xhpc_message="+encodeURIComponent(d)+"&xhpc_type="+lop+"&xhpc_category="+cat+"&xhpc_subcategory="+scat+"&title="+encodeURIComponent(id("xhcp_title").textContent)+"&participatedays="+participatedays+"&audience="+chmode+"&perticipate="+perticipate+"&token="+token)
     }
@@ -904,6 +915,15 @@ export default class Postbox extends Component{
             e.preventDefault();
             e.stopPropagation();
           }
+        });
+
+
+        
+
+        $(".edit_form_div").click(function(){
+
+            $(".emojionearea-editor").focus();
+           
         });
 
 
@@ -1175,7 +1195,7 @@ export default class Postbox extends Component{
           </div>
 
             <div className="post-anonomyus-check">
-                <p>Annonomyus comments</p>
+                <p>Honest views</p>
 
                 <input type="checkbox"  name="custom_checkbox"  id="custom_checkbox1"
                        onChange={this.fromchange}/>

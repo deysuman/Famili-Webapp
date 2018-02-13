@@ -2,8 +2,9 @@ import React,{Component} from "react";
 import PostAdapter from "./PostAdapter";
 import {URLS} from "../../constants/api";
 import Ajax from "../../lib/ajax";
-import Modal from "../PostModal/Modal"
-import {updatetime} from "../../helper/Postbox/Postbox"
+import Modal from "../PostModal/Modal";
+import {updatetime} from "../../helper/Postbox/Postbox";
+import swal from 'sweetalert';
 
 
 export default class Post extends Component{
@@ -151,11 +152,9 @@ export default class Post extends Component{
         swal({
                 title: "Are you sure?",
                 text: "You will not be able to recover this post",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, delete it!",
-                closeOnConfirm: false
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
             }).
             then(willDelete => {
 

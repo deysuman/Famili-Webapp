@@ -239,7 +239,7 @@ export default class PostAdapterforModal extends Component{
     }
 
 	anonprivacy(l){
-		const pri = (l.commentShow==true) ? 'Hide annonmyous comment' : 'Show annonmyous comment';
+		const pri = (l.commentShow==true) ? 'Hide honest views' : 'Show honest views';
 		if(l.anonComment == "1"){
 
 				return (<a onClick={this.updateprivacy.bind(this,l)} data-testid="" id={"React_boot_privacy"+l.update_id}>{pri}</a>);
@@ -252,13 +252,13 @@ export default class PostAdapterforModal extends Component{
 		let type = "true";
           if(!l.commentShow){
           	l.commentShow = true;
-          	document.getElementById("React_boot_privacy"+l.update_id).innerHTML = 'Hide annonmyous comment';
+          	document.getElementById("React_boot_privacy"+l.update_id).innerHTML = 'Hide honest views';
           	this.setState({ privacy: !this.state.privacy});
           }
 		else{
           l.commentShow = false;
           type = "false";
-          document.getElementById("React_boot_privacy"+l.update_id).innerHTML = 'Hide annonmyous comment';
+          document.getElementById("React_boot_privacy"+l.update_id).innerHTML = 'Hide hones views';
         }
 
 		const reactThis=this;

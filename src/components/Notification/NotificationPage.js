@@ -293,12 +293,17 @@ export default class NotificationPage extends Component{
 
     render ()
     {
-        return (<div className="container">
+        return (
+
+        <div className="post-body">
+        <div className="container">
                     <div className="viewall-left">
                         {this.Router()}
                     </div>  
 
                     <div className="viewall-right"></div>                 
+
+        </div>
 
         </div>)
 

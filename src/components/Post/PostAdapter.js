@@ -18,6 +18,11 @@ import Love from "../Love/Love.js";
 import PostAction from "./PostAction.js";
 import Privacyopt from "./Privacy.js";
 import Commentlayout from "../Comment/Commentlayout.js";
+import swal from 'sweetalert';
+import Tooltipconnectivity from './Tooltipconnectivity'
+import Tooltiptag from './Tooltiptag'
+
+
 
 
 export default class PostAdapter extends Component{
@@ -39,7 +44,8 @@ export default class PostAdapter extends Component{
         cmdshow: false,
         privacy: false,
         isuue : false,
-        time : 0
+        time : 0,
+        isTooltipActive: false
     
     }
 
@@ -61,6 +67,18 @@ export default class PostAdapter extends Component{
 
   }
 
+
+  showTooltip() {
+        //this.setState({isTooltipActive: true})
+        this.state.isTooltipActive = true;
+        this.forceUpdate();
+
+    }
+    hideTooltip() {
+        this.state.isTooltipActive = false;
+        this.forceUpdate();
+    }
+
   componentWillMount() {
 
       //this.setState()
@@ -76,6 +94,9 @@ export default class PostAdapter extends Component{
       })
 
     }
+
+
+    
 
 
 
@@ -292,11 +313,12 @@ export default class PostAdapter extends Component{
 			let div = document.createElement("div");
 			div.id="like_listing";
 			document.body.appendChild(div);
+      div.innerHTML='<div id="like_listing2" class="default-modal-mu"></div>';
 
 
 		}
 
-		return(ReactDOM.render(<Likelistingopen likesdata={update.likelisting}/>,document.getElementById("like_listing")));
+		return(ReactDOM.render(<Likelistingopen likesdata={update.likelisting}/>,document.getElementById("like_listing2")));
 
 	}
 
@@ -336,7 +358,7 @@ export default class PostAdapter extends Component{
 
 	anonprivacy(l){
 
-		const pri = (l.commentShow==true) ? 'Hide annonmyous comment' : 'Show annonmyous comment';
+		const pri = (l.commentShow==true) ? 'Hide honest views' : 'Show honest views';
 
 
 				return (<a onClick={this.updateprivacy.bind(this,l)} data-testid="" id={"React_boot_privacy"+l.update_id}>{pri}</a>);
@@ -406,6 +428,17 @@ export default class PostAdapter extends Component{
 
             ChangeFontSizePostBox();
             hash();
+          
+             if( navigator.userAgent.match(/Android/i)
+             || navigator.userAgent.match(/webOS/i)
+             || navigator.userAgent.match(/iPhone/i)
+             || navigator.userAgent.match(/iPad/i)
+             || navigator.userAgent.match(/iPod/i)
+             || navigator.userAgent.match(/BlackBerry/i)
+             || navigator.userAgent.match(/Windows Phone/i)
+             ){
+                document.getElementById("post-small-btn").click();
+            }
 
         }
         else {
@@ -425,41 +458,16 @@ export default class PostAdapter extends Component{
 
 	reportpost (y){
 
-		let photoavil = '';
-        let photo = '';
+		const reactThis=this;
+    const data='postid='+y.update_id;
 
-		if(y.uploads != null){
+    $("body").append('<div id="report_post"></div>');
 
-
-
-			if(y.uploads.lenght > 0){
-
-				for(let i =0;i<y.uploads.length;i++){
-                    photo = '<div class="report-pop-body-iamge"><img src="'+y.uploads[i]+'" alt="report"/></div>';
-				}
-
-			}
-
-
-            let photoavil = '<div class="form-group"><input type="radio" name="custom_checkbox" id="custom_radio5" value="custom_checkbox"><label for="custom_radio5">I\'m in this photo and I don\'t like i</label></div>';
-
-		}
-
-
-
-        let title = '<div class="privacy-title">Help Us UnderstandWhat\'s Happening</div>';
-        let firstbody = '<div class="report-pop"></div><div class="report-pop-body">'+photo+'<div class="report-pop-body-box"><h4>What\'s going on?</h4><div class="report-option"><form><div class="form-group"><input type="radio" name="custom_checkbox" id="custom_radio4"value="custom_checkbox"><label for="custom_radio4">It\'s annoying or not interesting</label></div>'+photoavil+'<div class="form-group"><input type="radio" name="custom_checkbox" id="custom_radio6" value="custom_checkbox"><label for="custom_radio6">I think it shouldn\'t be on Facebook</label></div><div class="form-group"><input type="radio" name="custom_checkbox" id="custom_radio7" value="custom_checkbox"><label for="custom_radio7">It\'s spam</label></div></form></div></div></div>';
-
-        let twoendbody = '';
-
-
-		swal({title:title, text:firstbody,html:true,confirmButtonText: "Continue",closeOnConfirm: false},
-
-		function(){
-				swal({title:title, text:body,html:true,confirmButtonText: "Continue",closeOnConfirm: false});
-		}
-
-		);
+    Ajax(URLS.REPORT, data , reactThis,
+      function(data){
+        $("#report_post").html(data);
+      }
+    );
 
 	}
 
@@ -468,19 +476,7 @@ export default class PostAdapter extends Component{
 		let reactThis = this;
 		let data = "postid="+y.update_id;
 
-    swal({
-                title: "Are you sure?",
-                text: "If you save this post then you cannot unsave this post",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes, i am sure",
-                closeOnConfirm: false
-            }).then(willDelete => {
-
-              if (willDelete) {
-
-                      Ajax(URLS.SAVEPOST, data, reactThis, function(data) {
+    Ajax(URLS.SAVEPOST, data, reactThis, function(data) {
                   if (data.error === true) {
                     
                     if(data.status === 1){
@@ -488,21 +484,75 @@ export default class PostAdapter extends Component{
                           swal("Error", "Something went wrong!", "error");
                     }
 
-                    else { swal("Error", "You already save this post", "error"); }
+                    else { swal("Notify", "You have Successfully unsave this post", "success");
+
+                     reactThis.state.data.savepost = false;
+
+                     reactThis.forceUpdate();
+
+
+
+
+                   }
               
 
                   } else {
-                      swal("Notify", "Successfully saved", "success");
+                      swal("Notify", "You have Successfully save this post", "success");
+                      //reactThis.setState({data.savepost : true})
+
+                      reactThis.state.data.savepost = true;
+
+                      reactThis.forceUpdate();
                   }
                    });
-              }
 
-            });
 
         
 
 
 	}
+
+
+  editg(update){
+
+    if(update.postedit == true){
+
+       if(document.getElementById("postsectioncl")!=null){
+
+                            
+    
+            if($("#postsectioncl").hasClass("active")){
+                                    
+               return (
+                    <a onClick={this.editpost.bind(this, update)} data-testid="">Edit</a>
+              )
+
+
+            }
+
+            else if($("#talent").hasClass("active")){
+
+                                
+                                
+            return (
+                  <a onClick={this.editpost.bind(this, update)} data-testid="">Edit</a>
+               )
+
+            }
+
+        }
+
+        else{
+
+      return (
+          <a onClick={this.editpost.bind(this, update)} data-testid="">Edit</a>
+        )
+    }
+
+      
+  }
+
+}
 
 
 	postowner (update){
@@ -512,17 +562,22 @@ export default class PostAdapter extends Component{
 		if(update.postown == true){
 
 			if(update.posttype == 0) {
-                return (
-					<div>
-						<a onClick={this.editpost.bind(this, update)} data-testid="">Edit</a>
-						<a onClick={this.props.removePost} data-value={update.update_id} data={update.update_id}
-						   data-testid="">Delete</a>
-                        {this.anonprivacy(update)}
-					</div>
-                );
-            }
 
-            else {
+        
+
+             return (
+                  <div>
+                    {this.editg(update)}
+                    <a onClick={this.props.removePost} data-value={update.update_id} data={update.update_id}
+                       data-testid="">Delete</a>
+                                {this.anonprivacy(update)}
+                    
+                  </div>
+              );
+          
+        }
+
+      else {
                 return (
 					<div>
 						<a onClick={this.props.removePost} data-value={update.update_id} data={update.update_id}
@@ -536,10 +591,13 @@ export default class PostAdapter extends Component{
 		}
 
 		else{
+
+      let f = (this.props.value.savepost == true) ? 'Unsave post' : 'Save post'
+
 			return (
 					<div>
 						<a onClick={this.reportpost.bind(this,update)} data-testid="">Report</a>
-						<a onClick={this.savepost.bind(this,update)} data-testid="">Savepost</a>
+						<a onClick={this.savepost.bind(this,update)} data-testid="">{f}</a>
 					</div>
 				);
 		}
@@ -800,10 +858,7 @@ export default class PostAdapter extends Component{
 					<div className="post-share-button">
 					  <Commentlayout type={1}   data={this.props.value}/>
 					</div>
-					<div className="post-share-button">
-					  <button type="button" name="like"><i className="icon icon-view"/></button>
-					  <div className="share-count"> {numberToHuman(update.views,false)}</div>
-					</div>
+					
 				  </div>
 				</div>
 
@@ -826,10 +881,7 @@ export default class PostAdapter extends Component{
           <div className="post-share-button">
 					<Commentlayout type={1} data={this.props.value}/>  
           </div>
-					<div className="post-share-button">
-					  <button type="button" name="like"><i className="icon icon-view"/></button>
-					  <div className="share-count"> {numberToHuman(update.views,false)}</div>
-					</div>
+					
 				  </div>
 				</div>);
 			}
@@ -849,10 +901,7 @@ export default class PostAdapter extends Component{
            <Commentlayout type={1}  data={this.props.value}/>
 
           </div>
-					<div className="post-share-button">
-					  <button type="button" name="like"><i className="icon icon-view"/></button>
-					  <div className="share-count">{numberToHuman(update.views,false)}</div>
-					</div>
+					
 				  </div>
 				</div>
 
@@ -969,6 +1018,9 @@ export default class PostAdapter extends Component{
         const activeIndex = this.state.activeIndex;
         const recent_activity = (update.recentAcitivty) ? update.recenttext : null;
 
+
+
+
 		if(windowfethtype==0){
 
 
@@ -1023,9 +1075,9 @@ export default class PostAdapter extends Component{
                                         </h5>
                                     </div>
 
-                                        <h4 dangerouslySetInnerHTML={this.tag(update.tag)}></h4>
-                                        <p dangerouslySetInnerHTML={this.tag(recent_activity)}></p>
-
+                                        
+                                        <Tooltiptag data={update}/>
+                                        <Tooltipconnectivity data={update}/>
 
 
                                   </div>

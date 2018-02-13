@@ -81,6 +81,21 @@ export default class Commentadapter extends Component{
 		}
 	}
 
+    reportcomment (y){
+
+        const reactThis=this;
+        const data='commentid='+y.com_id;
+
+        $("body").append('<div id="report_comment"></div>');
+
+        Ajax(URLS.REPORT, data , reactThis,
+          function(data){
+            $("#report_comment").html(data);
+          }
+        );
+
+    }
+
 	actionTool (e){
 
 		if(document.getElementById("React-Comment_"+e.com_id).style.display==="none"
@@ -146,7 +161,7 @@ export default class Commentadapter extends Component{
         {
              return(
                     <div>
-                        <a data-testid="">Report</a>
+                        <a onClick={this.reportcomment.bind(this,comment)} data-testid="">Report</a>
                         <a href="javascript:void(0)" id={"React_boot_commentshow"+comment.com_id} onClick={this.updatecom.bind(this,comment)} data-value={index} data-testid="">{pri}</a>
 
                     </div>);
@@ -165,18 +180,24 @@ export default class Commentadapter extends Component{
             
                 if(comment.type == "0")
                 {
-                    return(
+                    if(comment.uid_fk == myid){
+
+                        return(
                         <div>
                             <a data-testid="" onClick={this.showEditcomment.bind(this,comment)}>Edit</a>
-                            <a href="#" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
                             </div>);
+
+
+                    }
+
                 }
                 else
                 {
                     return(
                         <div>
                             <a data-testid="" onClick={this.showEditcomment.bind(this,comment)}>Edit</a>
-                            <a href="#" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
                             <a href="javascript:void(0)" id={"React_boot_commentshow"+comment.com_id} onClick={this.updatecom.bind(this,comment)} data-value={index} data-testid="">{pri}</a>
 
                         </div>);
@@ -189,21 +210,46 @@ export default class Commentadapter extends Component{
 
                  if(comment.type == "0")
                 {
-                    return(
+
+                    if(comment.uid_fk == myid){
+
+                         return(
                         <div>
                             <a data-testid="" onClick={this.showEditcomment.bind(this,comment)}>Edit</a>
-                            <a href="#" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
                             </div>);
+
+                    }
+
+                    else{
+
+                        return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
+
+                    }
+
+                   
                 }
                 else
                 {
-                    return(
-                        <div>
-                            <a data-testid="" onClick={this.showEditcomment.bind(this,comment)}>Edit</a>
-                            <a href="#" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
-                            
 
-                        </div>);
+
+                     if(comment.uid_fk == myid){
+                        return(
+                            <div>
+                                <a data-testid="" onClick={this.showEditcomment.bind(this,comment)}>Edit</a>
+                                <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                                
+
+                            </div>);
+                        }
+
+                        else{
+
+                            return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
+
+                        }
+
+
                 }
 
            }
@@ -213,17 +259,17 @@ export default class Commentadapter extends Component{
             {
 
                 if(comment.type == "0"){
-                    return(<div><a data-testid="">Report</a></div>);
+                    return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
                 }
                 else{
-                    return(<div><a href="#" onClick={this.updatecom.bind(this,comment)} id={"React_boot_commentshow"+comment.com_id} data-value={index} data-testid="">{pri}</a></div>);
+                    return(<div><a href="javascript:void(0)" onClick={this.updatecom.bind(this,comment)} id={"React_boot_commentshow"+comment.com_id} data-value={index} data-testid="">{pri}</a></div>);
                 }
             
             }
 
         else
         {            
-            return(<div><a data-testid="">Report</a></div>);
+            return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
         }
 
     }

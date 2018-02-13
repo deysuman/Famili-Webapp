@@ -33,6 +33,16 @@ export default class Message extends Component{
 
 		Ajax(URLS.GETCHAT, datas, reactThis, function (data) {
 
+
+				if(data.unseen_message > 0){
+
+	                
+
+	                $("#message_counter").show();
+
+	                $("#message_counter p").html(data.unseen_message);
+            	}
+
                 for (let i = 0; i < data.messages.length; i++) {
 
                 	//console.log("message " + data.messages);

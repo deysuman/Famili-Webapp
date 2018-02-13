@@ -37,6 +37,14 @@ export default class NotificationRoot extends Component{
                 notifications: data.notification,
                 loading : false
             });
+
+            if(data.unseen_notification > 0){
+
+                $("#notification_count").show();
+
+                $("#notification_count p").html(data.unseen_notification);
+            }
+
             totalNotificationpage=data.totalpage;
             if(document.getElementById("loading_notification")!=null){
                 document.getElementById("loading_notification").classList.add("none");
@@ -48,7 +56,19 @@ export default class NotificationRoot extends Component{
     updatesFromloadmore (data)
     {
         let notificationss = this.state.notifications;
-        let newnotification = notificationss.concat(data.notification);
+
+        for(var i=0;i< data.notification.length;i++){
+
+            let position4 = notificationss.map((el) => el.createdid).indexOf(data.notification[i].createdid);
+
+            if(position4 == -1){
+
+                notificationss.push(data.notification[i]);
+            }
+
+        }
+
+        //let newnotification = notificationss.concat(data.notification);
         this.setState({notifications: newnotification});
 
     }
