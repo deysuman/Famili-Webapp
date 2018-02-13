@@ -736,8 +736,11 @@ export function formormality(){
    document.getElementById('post-small-btn').style.display='block';
     document.getElementById('postbox').style.display='none'
     document.getElementById('post-small-close-btn').style.display='none';
+    $('html, body').css('overflowY', 'auto'); 
+
   }
- 
+
+   $('html, body').css('overflowY', 'auto'); 
     
 
     if($('#switch').hasClass('switchOn')){

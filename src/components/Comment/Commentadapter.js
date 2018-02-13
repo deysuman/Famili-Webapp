@@ -221,6 +221,16 @@ export default class Commentadapter extends Component{
 
                     }
 
+                    else if(comment.postownerid == myid){
+
+                        return(
+                        <div>
+                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                            </div>);
+
+                    }
+
+
                     else{
 
                         return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
@@ -241,6 +251,15 @@ export default class Commentadapter extends Component{
                                 
 
                             </div>);
+                        }
+
+                         else if(comment.postownerid == myid){
+
+                        return(
+                        <div>
+                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                            </div>);
+
                         }
 
                         else{
