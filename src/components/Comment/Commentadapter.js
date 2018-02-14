@@ -221,14 +221,18 @@ export default class Commentadapter extends Component{
 
                     }
 
-                    else if(comment.postownerid == myid){
 
-                        return(
-                        <div>
-                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
-                            </div>);
+                     else if(comment.postownerid == myid){
 
-                    }
+                            return(
+                                    <div>
+                                        <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                                    </div>
+                            );
+
+                        }
+
+                   
 
 
                     else{
@@ -255,10 +259,11 @@ export default class Commentadapter extends Component{
 
                          else if(comment.postownerid == myid){
 
-                        return(
-                        <div>
-                            <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
-                            </div>);
+                            return(
+                                    <div>
+                                        <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                                    </div>
+                            );
 
                         }
 
@@ -278,7 +283,24 @@ export default class Commentadapter extends Component{
             {
 
                 if(comment.type == "0"){
-                    return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);
+
+                    if(comment.postownerid == myid){
+
+                            return(
+                                    <div>
+                                        <a href="javascript:void(0)" data={comment.com_id} onClick={this.props.deleteComment} data-value={index} data-testid="">Delete</a>
+                                    </div>
+                            );
+
+                        }
+
+                        else{
+
+                              return(<div><a onClick={this.reportcomment.bind(this,comment)}  data-testid="">Report</a></div>);   
+
+                        }
+
+                   
                 }
                 else{
                     return(<div><a href="javascript:void(0)" onClick={this.updatecom.bind(this,comment)} id={"React_boot_commentshow"+comment.com_id} data-value={index} data-testid="">{pri}</a></div>);

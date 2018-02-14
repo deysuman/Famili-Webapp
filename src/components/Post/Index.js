@@ -277,25 +277,33 @@ export default class Postutil extends Component{
 
          if(this.state.totalpage > 1){
 
-            console.log(" I am here its go");
-
-            this.setState({
-                loading : true
-            });
-
-            if(document.getElementById("postsectioncl")!=null){
-
-                this.profilesearch2(this.state.currentsec);
+         	if(this.state.totalpage != data.length){
 
 
-            }
+         			console.log(" I am here its go");
+
+		            this.setState({
+		                loading : true
+		            });
+
+		            if(document.getElementById("postsectioncl")!=null){
+
+		                this.profilesearch2(this.state.currentsec);
 
 
-            else{
+		            }
 
-                this.updatesFromServer();
 
-            }
+		            else{
+
+		                this.updatesFromServer();
+
+		            }
+
+
+         	}
+
+            
                 
          }
         
